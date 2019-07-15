@@ -10,7 +10,7 @@ namespace Repository
 {
     public class Conexao
     {
-        public SqlCommand Conectar()
+        public static SqlCommand Conectar()
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = ConfigurationManager.ConnectionStrings["DefautConnection"].ConnectionString;
