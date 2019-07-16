@@ -14,8 +14,8 @@ namespace Repository
         public void Inserir(Categoria categoria)
         {
             SqlCommand comando = Conexao.Conectar();
-            comando.CommandText = "INSERT INTO categorias (nome) VALUES @NOME";
-            comando.Parameters.AddWithValue("@ID", categoria.Id);
+            comando.CommandText = "INSERT INTO categorias (nome) VALUES ( @NOME )";
+            comando.Parameters.AddWithValue("@NOME", categoria.Nome);
             comando.ExecuteNonQuery();
             comando.Connection.Close();
 
