@@ -40,6 +40,7 @@ namespace View.Controllers
             Cidade cidade = new Cidade();
             cidade.Nome = nome;
             cidade.NumeroHabitantes = numeroHabitantes;
+            cidade.Estado = new Estado();
             cidade.IdEstado = estado;
             repository.Inserir(cidade);
             return RedirectToAction("Index");

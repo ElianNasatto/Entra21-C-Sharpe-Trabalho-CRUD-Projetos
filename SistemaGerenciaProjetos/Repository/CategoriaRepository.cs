@@ -23,7 +23,7 @@ namespace Repository
 
         public void Apagar(int id)
         {
-            SqlCommand comando = new SqlCommand();
+            SqlCommand comando = Conexao.Conectar();
             comando.CommandText = "DELETE FROM categorias WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
             comando.ExecuteNonQuery();

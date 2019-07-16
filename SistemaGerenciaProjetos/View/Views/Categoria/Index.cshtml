@@ -25,6 +25,10 @@
             <tr>
                 <td>@categoria.Id</td>
                 <td>@categoria.Nome</td>
+                <td>
+                    <a href="/categoria/editar?id=@categoria.Id">Alterar</a>
+                    <a href="/categoria/apagar?id=@categoria.Id">Apagar</a>
+                </td>
 
             </tr>
         }

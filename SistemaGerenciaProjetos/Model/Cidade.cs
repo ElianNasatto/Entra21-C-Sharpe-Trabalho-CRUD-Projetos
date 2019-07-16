@@ -11,7 +11,7 @@ namespace Model
         public int Id;
         public string Nome;
         public int NumeroHabitantes;
-        public string IdEstado;
+        public int IdEstado;
         public Estado Estado;
     }
 }
