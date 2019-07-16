@@ -64,5 +64,15 @@ namespace Repository
             return categoria;
             
         }
+
+        public void Alterar(Categoria categoria)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "UPDATE cidades SET nome = @NOME WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", categoria.Id);
+            comando.Parameters.AddWithValue("@NOME", categoria.Nome);
+            comando.ExecuteNonQuery();
+
+        }
     }
 }
