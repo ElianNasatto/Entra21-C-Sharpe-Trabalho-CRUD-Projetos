@@ -1,0 +1,6 @@
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\bin\Debug\Model.dll
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\bin\Debug\Model.pdb
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.dll
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.pdb

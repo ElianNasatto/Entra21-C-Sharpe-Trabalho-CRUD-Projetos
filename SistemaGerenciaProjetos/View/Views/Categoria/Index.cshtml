@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<title>Categorias</title>
+<h3>Titulo Aqui</h3>
+
+<table>
+    <div>
+        <a href="~/Views/Categoria/Cadastro"></a>
+    </div>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach(Model.Categoria categoria in ViewBag.Categorias)
+        {
+            <tr>
+                <td>@categoria.Id</td>
+                <td>@categoria.Nome</td>
+                
+            </tr>
+        }
+    </tbody>
+
+
+    <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+        </tr>
+    </tfoot>
+</table>
+

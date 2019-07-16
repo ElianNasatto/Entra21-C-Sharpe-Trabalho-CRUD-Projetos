@@ -1,0 +1,9 @@
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Repository.dll
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Repository.pdb
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Model.dll
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Model.pdb
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csproj.CopyComplete
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.dll
+C:\Users\LENOVO\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.pdb
