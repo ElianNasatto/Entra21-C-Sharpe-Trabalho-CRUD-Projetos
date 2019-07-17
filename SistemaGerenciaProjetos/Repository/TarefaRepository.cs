@@ -15,9 +15,14 @@ namespace Repository
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"INSERT INTO tarefas
-(id_usuario_responsavel, id_projeto, id_categoria, titulo, descricao, duracao)
-OUTPUT INSERTED.ID VALUES
-(@ID_USUARIO_RESPONSAVEL, @ID_PROJETO, @ID_CATEGORIA, @TITULO, @DESCRICAO, @DURACAO)";
+                                        (id_usuario_responsavel, 
+                                        id_projeto, id_categoria, 
+                                        titulo, descricao, duracao)
+                                    OUTPUT INSERTED.ID VALUES
+                                        (@ID_USUARIO_RESPONSAVEL, 
+                                        @ID_PROJETO, @ID_CATEGORIA,
+                                        @TITULO, @DESCRICAO, @DURACAO)";
+
             comando.Parameters.AddWithValue("@ID_USUARIO_RESPONSAVEL", tarefa.FkUsuario);
             comando.Parameters.AddWithValue("@ID_PROJETO", tarefa.FkProjeto);
             comando.Parameters.AddWithValue("@ID_CATEGORIA", tarefa.FkCategoria);
@@ -32,15 +37,17 @@ OUTPUT INSERTED.ID VALUES
         public List<Tarefa> ObterTodos()
         {
             SqlCommand comando = Conexao.Conectar();
-            comando.CommandText = @"SELECT tarefas.id AS 'TarefaId',
-tarefas.titulo AS 'TarefaTitulo',
-tarefas.descricao AS 'TarefaDescrição',
-tarefas.id_usuario_responsavel AS 'TarefaIdUsuarioResponsavel',
-tarefas.id_projeto AS 'TarefaIdProjeto',
-tarefas.id_categoria AS 'TarefaIdCategoria',
-categorias.nome AS 'CategoriaNome'
-FROM tarefas 
-INNER JOIN ;";
+            comando.CommandText = @"SELECT 
+                                            tarefas.id AS 'TarefaId',
+                                            tarefas.titulo AS 'TarefaTitulo',
+                                            tarefas.descricao AS 'TarefaDescrição',
+                                            tarefas.id_categoria AS 'TarefaIdCategoria',
+                                            tarefas.ducacao AS 'duracao_tarefa',
+                usuarios.nome AS 'nome_usuario,
+                projetos.nome AS 'nome_projeto
+                FROM tarefas 
+                INNER JOIN usuarios ON (tarefas.id_usuario_responsavel = usuarios.id)
+                INNER JOIN projetos ON (tarefas.id_projeto = projetos.id)";
 
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
@@ -53,7 +60,12 @@ INNER JOIN ;";
                 tarefa.Id = Convert.ToInt32("TarefaId");
                 tarefa.Titulo = linha["TarefaTitulo"].ToString();
                 tarefa.Descricao = linha["TarefaDescricao"].ToString();
-                tarefa.Duracao = Convert.ToDateTime(linha["TarefaDuracao"]);
+                tarefa.Duracao = Convert.ToDateTime(linha["duracao_tarefa"]);
+                tarefa.Usuario = new Usuario();
+                tarefa.Usuario.Nome = linha["nome_usuario"].ToString();
+                tarefa.Projeto = new Projeto();
+                tarefa.Projeto.Nome = linha["nome_projeto"].ToString();
+                tarefas.Add(tarefa);
             }
             return tarefas;
         }

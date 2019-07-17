@@ -15,5 +15,9 @@ namespace Model
         public string Titulo;
         public string Descricao;
         public DateTime Duracao;
+
+        //Criado esses dois objetos pois quando mostramos as tarefas mostramos tambem o nome do projeto e usuario que a tarefa pertence
+        public Usuario Usuario;
+        public Projeto Projeto;
     }
 }
