@@ -8,7 +8,7 @@ namespace Model
 {
     public class Tarefa
     {
-        public int id;
+        public int Id;
         public int FkUsuario;
         public int FkProjeto;
         public int FkCategoria;
