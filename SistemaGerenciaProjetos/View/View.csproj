@@ -111,6 +111,7 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
+    <Compile Include="Controllers\ProjetoController.cs" />
     <Compile Include="Controllers\TarefaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -136,6 +137,9 @@
     <Content Include="Views\Tarefa\Index.cshtml" />
     <Content Include="Views\Tarefa\Cadastro.cshtml" />
     <Content Include="Views\Tarefa\Alterar.cshtml" />
+    <Content Include="Views\Projeto\Index.cshtml" />
+    <Content Include="Views\Projeto\Cadastro.cshtml" />
+    <Content Include="Views\Projeto\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -87,16 +87,17 @@ WHERE id = @Id";
             return quantidadeAfetada == 1;
         }
 
-        public Projeto ObterPeloIp(int id)
+        public Projeto ObterPeloId(int id)
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"SELECT projetos.id AS 'ProjetoId',
-projetos.id_cliente AS 'ProjetoIdCliente',
-projetos.nome AS 'ProjetoNome',
-projetos.data_criacao AS 'ProjetoDataCriação',
-projetos.data_finalizacao AS 'ProjetoDataFinalização'
-FROM projetos
-INNER JOIN clientes ON (projetos.id_cliente = clientes_id)";
+                                        projetos.id_cliente AS 'ProjetoIdCliente',
+                                        projetos.nome AS 'ProjetoNome',
+                                        projetos.data_criacao AS 'ProjetoDataCriacao',
+                                        projetos.data_finalizacao AS 'ProjetoDataFinalizacao',
+                                        clientes.nome AS 'ClienteNome'
+                                    FROM projetos
+                                    INNER JOIN clientes ON (projetos.id_cliente = clientes.id)";
             comando.Parameters.AddWithValue("@ID", id);
 
             DataTable tabela = new DataTable();
