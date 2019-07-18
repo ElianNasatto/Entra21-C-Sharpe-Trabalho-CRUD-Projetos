@@ -15,7 +15,7 @@ namespace Repository
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"INSERT INTO clientes (nome,cpf,data_nascimento,numero,complemento,logradouro,cep,id_cidade)
-                VALUES @NOME,@CPF,@DATA_NASCIMENTO,@NUMERO,@COMPLEMENTO,@LOGRADOURO,@CEP,@ID_CIDADE)";
+                VALUES (@NOME,@CPF,@DATA_NASCIMENTO,@NUMERO,@COMPLEMENTO,@LOGRADOURO,@CEP,@ID_CIDADE)";
             comando.Parameters.AddWithValue("@NOME", cliente.Nome);
             comando.Parameters.AddWithValue("@CPF", cliente.Cpf);
             comando.Parameters.AddWithValue("@DATA_NASCIMENTO", cliente.DataNascimento);
@@ -89,7 +89,8 @@ namespace Repository
                                 clientes.id_cidade AS 'id_cidade',
                                 cidades.nome AS 'nome_cidade'
             FROM clientes INNER JOIN cidades ON (clientes.id_cidade = cidades.id)
-            WHERE id = @ID";
+            WHERE clientes.id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
             comando.Connection.Close();
@@ -112,11 +113,11 @@ namespace Repository
 
         public void Alterar(Cliente cliente)
         {
-            SqlCommand comando = new SqlCommand();
+            SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"UPDATE clientes SET
-                                    nome = @NOME
-                                    cpf = @CPF
-                                    data_nascimento = @DATA_NASCIMENTO
+                                    nome = @NOME,
+                                    cpf = @CPF,
+                                    data_nascimento = @DATA_NASCIMENTO,
                                     numero = @NUMERO,
                                     complemento = @COMPLEMENTO,
                                     logradouro = @LOGRAROURO,
@@ -129,7 +130,7 @@ namespace Repository
             comando.Parameters.AddWithValue("@DATA_NASCIMENTO", cliente.DataNascimento);
             comando.Parameters.AddWithValue("@NUMERO", cliente.Numero);
             comando.Parameters.AddWithValue("@COMPLEMENTO", cliente.Complemento);
-            comando.Parameters.AddWithValue("@LOGRADOURO", cliente.Logradouro);
+            comando.Parameters.AddWithValue("@LOGRAROURO", cliente.Logradouro);
             comando.Parameters.AddWithValue("@CEP", cliente.Cep);
             comando.Parameters.AddWithValue("@ID_CIDADE", cliente.FkCidade);
             comando.ExecuteNonQuery();

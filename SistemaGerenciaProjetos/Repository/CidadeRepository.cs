@@ -38,6 +38,7 @@ namespace Repository
             comando.CommandText = @"SELECT  
                                     cidades.id AS 'id_cidade',
                                     cidades.nome AS 'nome_cidade',
+                                    cidades.id_estado AS 'idEstado',
                                     cidades.numero_habitantes AS 'numero_habitantes',
                                     estados.nome AS 'nome_estado'
                                     FROM cidades INNER JOIN estados ON (cidades.id_estado = estados.id)";
@@ -48,9 +49,10 @@ namespace Repository
             foreach (DataRow linha in tabela.Rows)
             {
                 Cidade cidade = new Cidade();
-                cidade.Id = Convert.ToInt32(linha["id"]);
-                cidade.Nome = linha["nome"].ToString();
+                cidade.Id = Convert.ToInt32(linha["id_cidade"]);
+                cidade.Nome = linha["nome_cidade"].ToString();
                 cidade.NumeroHabitantes = Convert.ToInt32(linha["numero_habitantes"]);
+                cidade.IdEstado = Convert.ToInt32(linha["idEstado"]);
                 cidade.Estado = new Estado();
                 cidade.Estado.Nome = linha["nome_estado"].ToString();
                 lista.Add(cidade);   
