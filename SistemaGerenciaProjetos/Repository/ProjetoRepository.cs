@@ -31,12 +31,13 @@ OUTPUT INSERTED.ID VALUES
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"SELECT projetos.id AS 'ProjetoId',
-projetos.id_cliente AS 'ProjetoIdCliente',
-projetos.nome AS 'ProjetoNome',
-projetos.data_criacao AS 'ProjetoDataCriação',
-projetos.data_finalizacao AS 'ProjetoDataFinalização'
-FROM projetos
-INNER JOIN clientes ON (projetos.id_cliente = clientes_id)";
+                                        projetos.id_cliente AS 'ProjetoIdCliente',
+                                        projetos.nome AS 'ProjetoNome',
+                                        projetos.data_criacao AS 'ProjetoDataCriação',
+                                        projetos.data_finalizacao AS 'ProjetoDataFinalização',
+                                        clientes.nome AS 'ClienteNome'
+                                        FROM projetos
+                                    INNER JOIN clientes ON (projetos.id_cliente = clientes.id)";
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
             comando.Connection.Close();
@@ -45,11 +46,11 @@ INNER JOIN clientes ON (projetos.id_cliente = clientes_id)";
             foreach (DataRow linha in tabela.Rows)
             {
                 Projeto projeto = new Projeto();
-                projeto.Id = Convert.ToInt32(linha["id"]);
-                projeto.Nome = linha["nome"].ToString();
-                projeto.DataCriacao = Convert.ToDateTime(linha["dataCriacao"]);
-                projeto.DataFinalizacao = Convert.ToDateTime(linha["dataFinalizacao"]);
-                projeto.FkCliente = Convert.ToInt32(linha["idCliente"]);
+                projeto.Id = Convert.ToInt32(linha["ProjetoId"]);
+                projeto.Nome = linha["ProjetoNome"].ToString();
+                projeto.DataCriacao = Convert.ToDateTime(linha["ProjetoDataCriação"]);
+                projeto.DataFinalizacao = Convert.ToDateTime(linha["ProjetoDataFinalização"]);
+                projeto.FkCliente = Convert.ToInt32(linha["ProjetoIdCliente"]);
                 projeto.Cliente = new Cliente();
                 projeto.Cliente.Nome = linha["ClienteNome"].ToString();
                 projetos.Add(projeto);

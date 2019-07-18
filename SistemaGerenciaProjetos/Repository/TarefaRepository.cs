@@ -40,14 +40,16 @@ namespace Repository
             comando.CommandText = @"SELECT 
                                             tarefas.id AS 'TarefaId',
                                             tarefas.titulo AS 'TarefaTitulo',
-                                            tarefas.descricao AS 'TarefaDescrição',
+                                            tarefas.descricao AS 'TarefaDescricao',
                                             tarefas.id_categoria AS 'TarefaIdCategoria',
-                                            tarefas.ducacao AS 'duracao_tarefa',
-                usuarios.nome AS 'nome_usuario,
-                projetos.nome AS 'nome_projeto
+                                            tarefas.duracao AS 'duracao_tarefa',
+                usuarios.nome AS 'nome_usuario',
+                projetos.nome AS 'nome_projeto',
+                categorias.nome AS 'nome_categoria'
                 FROM tarefas 
                 INNER JOIN usuarios ON (tarefas.id_usuario_responsavel = usuarios.id)
-                INNER JOIN projetos ON (tarefas.id_projeto = projetos.id)";
+                INNER JOIN projetos ON (tarefas.id_projeto = projetos.id)
+                INNER JOIN categorias ON (tarefas.id_categoria = categorias.id)";
 
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
@@ -57,15 +59,18 @@ namespace Repository
             foreach (DataRow linha in tabela.Rows)
             {
                 Tarefa tarefa = new Tarefa();
-                tarefa.Id = Convert.ToInt32("TarefaId");
+                tarefa.Id = Convert.ToInt32(linha["TarefaId"]);
                 tarefa.Titulo = linha["TarefaTitulo"].ToString();
                 tarefa.Descricao = linha["TarefaDescricao"].ToString();
+                //Duracao modificada para string pois nao estava convertendo
                 tarefa.Duracao = Convert.ToDateTime(linha["duracao_tarefa"]);
                 tarefa.Usuario = new Usuario();
                 tarefa.Usuario.Nome = linha["nome_usuario"].ToString();
                 tarefa.Projeto = new Projeto();
                 tarefa.Projeto.Nome = linha["nome_projeto"].ToString();
                 tarefas.Add(tarefa);
+                tarefa.Categoria = new Categoria();
+                tarefa.Categoria.Nome = linha["nome_categoria"].ToString();
             }
             return tarefas;
         }
@@ -85,13 +90,13 @@ namespace Repository
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"UPDATE tarefas SET 
-titulo = @TITULO, 
-id_usuario_responsavel = @ID_USUARIO_RESPONSAVEL,
-id_projeto = @ID_PROJETO,
-id_categoria = @ID_CATEGORIA,
-descricao = @DESCRICAO,
-duracao = @DURACAO
-WHERE id = @Id";
+                                        id_usuario_responsavel = @ID_USUARIO_RESPONSAVEL,
+                                        id_projeto = @ID_PROJETO,
+                                        id_categoria = @ID_CATEGORIA,
+                                        titulo = @TITULO, 
+                                        descricao = @DESCRICAO,
+                                        duracao = @DURACAO
+                                    WHERE id = @ID";
             comando.Parameters.AddWithValue("@TITULO", tarefa.Titulo);
             comando.Parameters.AddWithValue("@ID_USUARIO_RESPONSAVEL", tarefa.FkUsuario);
             comando.Parameters.AddWithValue("@ID_PROJETO", tarefa.FkProjeto);
@@ -108,15 +113,14 @@ WHERE id = @Id";
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"SELECT tarefas.id AS 'TarefaId',
-tarefas.titulo AS 'TarefaTitulo',
-tarefas.descricao AS 'TarefaDescricao',
-tarefas.duracao AS 'TarefaDuracao',
-tarefas.id_usuario_responsavel AS 'TarefaIdUsuario',
-tarefas.id_projeto AS 'TarefaIdProjeto',
-tarefas.id_categoria AS 'TarefaIdCategoria',
-FROM tarefas
-INNER JOIN 
-WHERE veiculos.id = @ID";
+                                        tarefas.titulo AS 'TarefaTitulo',
+                                        tarefas.descricao AS 'TarefaDescricao',
+                                        tarefas.duracao AS 'TarefaDuracao',
+                                        tarefas.id_usuario_responsavel AS 'TarefaIdUsuario',
+                                        tarefas.id_projeto AS 'TarefaIdProjeto',
+                                        tarefas.id_categoria AS 'TarefaIdCategoria'
+                                    FROM tarefas
+                                    WHERE tarefas.id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
             DataTable tabela = new DataTable();
@@ -135,9 +139,9 @@ WHERE veiculos.id = @ID";
             tarefa.Titulo = linha["TarefaTitulo"].ToString();
             tarefa.Descricao = linha["TarefaDescricao"].ToString();
             tarefa.Duracao = Convert.ToDateTime(linha["TarefaDuracao"]);
+            tarefa.FkUsuario = Convert.ToInt32(linha["TarefaIdUsuario"]);
+            tarefa.FkProjeto = Convert.ToInt32(linha["TarefaIdProjeto"]);
             tarefa.FkCategoria = Convert.ToInt32(linha["TarefaIdCategoria"]);
-            
-
             return tarefa;
         }
     }
