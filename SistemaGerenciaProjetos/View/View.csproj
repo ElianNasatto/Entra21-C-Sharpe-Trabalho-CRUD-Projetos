@@ -144,12 +144,15 @@
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Cliente\Inserir.cshtml" />
     <Content Include="Views\Cliente\Alterar.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Cidade\Index.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
     <Content Include="Views\Cidade\Alterar.cshtml" />
     <Content Include="Views\Estado\Index.cshtml" />
     <Content Include="Views\Estado\Cadastro.cshtml" />
     <Content Include="Views\Estado\Alterar.cshtml" />
+=======
+>>>>>>> 20f8bacd697e6541d3a8912ee1270b94c8eb2995
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
