@@ -156,7 +156,6 @@ C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaG
 C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\View\obj\Debug\View.csproj.CopyComplete
 C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\View\obj\Debug\View.dll
 C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\View\obj\Debug\View.pdb
-<<<<<<< HEAD
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\View\bin\View.dll.config
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\View\bin\View.dll
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\View\bin\View.pdb
@@ -236,5 +235,3 @@ C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\Sistema
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\View\obj\Debug\View.csproj.CopyComplete
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\View\obj\Debug\View.dll
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\View\obj\Debug\View.pdb
-=======
->>>>>>> 20f8bacd697e6541d3a8912ee1270b94c8eb2995

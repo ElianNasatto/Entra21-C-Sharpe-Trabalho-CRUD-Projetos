@@ -16,7 +16,6 @@ C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaG
 C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csproj.CopyComplete
 C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.dll
 C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.pdb
-<<<<<<< HEAD
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\Repository\bin\Debug\Repository.dll
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\Repository\bin\Debug\Repository.pdb
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\Repository\bin\Debug\Model.dll
@@ -26,5 +25,3 @@ C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\Sistema
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csproj.CopyComplete
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.dll
 C:\Users\LENOVO\Downloads\Entra21-C-Sharpe-Trabalho-CRUD-Projetos-master\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.pdb
-=======
->>>>>>> 20f8bacd697e6541d3a8912ee1270b94c8eb2995
