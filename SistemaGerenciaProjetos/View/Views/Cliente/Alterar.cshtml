@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2>Alterar</h2>
+<form action="/cliente/update">
+    <div>
+        <label for="campo-nome">Nome</label>
+        <input type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Clientes.Nome"/>
+    </div>
+    <div>
+        <label for="campo-cpf">CPF</label>
+        <input type="number" required="" id="campo-cpf" name="cpf" value="@ViewBag.Clientes.Cpf" />
+    </div>
+    <div>
+        <label for="campo-data-nascimento">Data Nascimento</label>
+        <input type="date" id="campo-data-nascimento" name="dataNascimento" required="" value="@ViewBag.Clientes.DataNascimento"/>
+    </div>
+    <div>
+        <label for="campo-cidade">Cidade</label>
+        <select name="cidade" id="campo-cidade" required="">
+
+            @foreach (Model.Cidade Cidade in ViewBag.Cidades)
+            {
+                if (Cidade.Id == ViewBag.Clientes.FkCidade)
+                {
+                    <option value="@Cidade.Id" selected="selected">@Cidade.Nome</option>
+                }
+                else
+                {
+                <option value="@Cidade.Id">@Cidade.Nome</option>
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <label for="campo-numero">Numero</label>
+        <input type="number" required="" name="numero" id="campo-numero" value="@ViewBag.Clientes.Numero" />
+    </div>
+    <div>
+        <label for="campo-complemento">Complemento</label>
+        <input type="text" required="" name="complemento" id="campo-complemento" value="@ViewBag.Clientes.Complemento"/>
+    </div>
+    <div>
+        <label for="campo-logradouro">Logradouro</label>
+        <input type="text" required="" name="logradouro" id="campo-logradouro" value="@ViewBag.Clientes.Logradouro" />
+    </div>
+    <div>
+        <label for="campo-cep">Cep</label>
+        <input type="text" required="" name="cep" id="campo-cep" value="@ViewBag.Clientes.Cep" />
+    </div>
+    <input type="text" hidden="hidden" value="@ViewBag.Clientes.Id" name="id" />
+    <button type="submit">Alterar</button>
+</form>
+

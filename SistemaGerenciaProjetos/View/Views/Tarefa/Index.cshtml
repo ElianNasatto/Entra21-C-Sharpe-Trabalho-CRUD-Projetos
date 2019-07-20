@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <a href="/tarefa/cadastro">Adicionar tarefa</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Usuario Responsavel</td>
+            <td>Projeto</td>
+            <td>Categoria</td>
+            <td>Titulo</td>
+            <td>Descricão</td>
+            <td>Duração</td>
+            <td>Ação</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Model.Tarefa  tarefa in ViewBag.Tarefa)
+        {
+            <tr>
+                <td>@tarefa.Id</td>
+                <td>@tarefa.Usuario.Nome</td>
+                <td>@tarefa.Projeto.Nome</td>
+                <td>@tarefa.Categoria.Nome</td>
+                <td>@tarefa.Titulo</td>
+                <td>@tarefa.Descricao</td>
+                <td>@tarefa.Duracao</td>
+                <td>
+                    <a href="/tarefa/alterar?id=@tarefa.Id">Alterar</a>
+                    <a href="/tarefa/apagar?id=@tarefa.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Id</td>
+            <td>Usuario Responsavel</td>
+            <td>Projeto</td>
+            <td>Categoria</td>
+            <td>Titulo</td>
+            <td>Descricão</td>
+            <td>Duração</td>
+            <td>Ação</td>
+        </tr>
+    </tfoot>
+</table>
+</form>
+

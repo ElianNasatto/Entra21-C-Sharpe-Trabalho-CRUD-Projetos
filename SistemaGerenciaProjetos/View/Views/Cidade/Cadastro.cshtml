@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadastro</h2>
+<form action="/cidade/store" method="post">
+    <div>
+        <label for="campo-nome">Nome</label>
+        <input type="text" name="nome" id="campo-nome" required="" />
+    </div>
+    <div>
+        <label for="campo-habitantes">Numero de Habitantes</label>
+        <input type="text" name="habitantes" id="campo-habitantes" required="" />
+    </div>
+    <button type="submit">Salvar</button>
+</form>
+

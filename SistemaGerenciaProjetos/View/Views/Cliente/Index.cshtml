@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <a href="/cliente/inserir">Adicionar Cliente</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Cpf</td>
+            <td>Data Nascimento</td>
+            <td>Cidade</td>
+            <td>Numero</td>
+            <td>Complemento</td>
+            <td>Logradouro</td>
+            <td>Cep</td>
+            <td>Ação</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Model.Cliente Cliente in ViewBag.Clientes)
+        {
+            <tr>
+                <td>@Cliente.Id</td>
+                <td>@Cliente.Nome</td>
+                <td>@Cliente.Cpf</td>
+                <td>@Cliente.DataNascimento</td>
+                <td>@Cliente.Cidade.Nome</td>
+                <td>@Cliente.Numero</td>
+                <td>@Cliente.Complemento</td>
+                <td>@Cliente.Logradouro</td>
+                <td>@Cliente.Cep</td>
+                <td>
+                    <a href="/cliente/alterar?id=@Cliente.Id">Alterar</a>
+                    <a href="/cliente/apagar?id=@Cliente.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Cpf</td>
+            <td>Data Nascimento</td>
+            <td>Cidade</td>
+            <td>Numero</td>
+            <td>Complemento</td>
+            <td>Logradouro</td>
+            <td>Cep</td>
+            <td>Ação</td>
+        </tr>
+    </tfoot>
+</table>
+

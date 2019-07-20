@@ -2,28 +2,35 @@
 @{
     ViewBag.Title = "Index";
 }
-<title>Categorias</title>
-<h3>Titulo Aqui</h3>
 
+<h2>Index</h2>
+
+<title>Categorias</title>
+<div>
+    <a href="~/Views/Categoria/Cadastro"></a>
+</div>
+<a href="/categoria/cadastro">Inserir</a>
 <table>
-    <div>
-        <a href="~/Views/Categoria/Cadastro"></a>
-    </div>
     <thead>
         <tr>
             <th>Id</th>
             <th>Nome</th>
+
         </tr>
     </thead>
 
 
     <tbody>
-        @foreach(Model.Categoria categoria in ViewBag.Categorias)
+        @foreach (Model.Categoria categoria in ViewBag.Categorias)
         {
             <tr>
                 <td>@categoria.Id</td>
                 <td>@categoria.Nome</td>
-                
+                <td>
+                    <a href="/categoria/editar?id=@categoria.Id">Alterar</a>
+                    <a href="/categoria/apagar?id=@categoria.Id">Apagar</a>
+                </td>
+
             </tr>
         }
     </tbody>
@@ -36,4 +43,3 @@
         </tr>
     </tfoot>
 </table>
-
