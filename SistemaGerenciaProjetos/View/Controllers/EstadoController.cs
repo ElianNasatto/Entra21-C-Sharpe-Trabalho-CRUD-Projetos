@@ -10,7 +10,6 @@ namespace View.Controllers
 {
     public class EstadoController : Controller
     {
-<<<<<<< HEAD
         private EstadoRepository repository;
 
         public EstadoController()
@@ -63,13 +62,5 @@ namespace View.Controllers
             repository.Apagar(id);
             return RedirectToAction("Index"); 
         }
-=======
-
-        // GET: Estado
-        public ActionResult Index()
-        {
-            return View();
-        }
->>>>>>> 20f8bacd697e6541d3a8912ee1270b94c8eb2995
     }
 }
