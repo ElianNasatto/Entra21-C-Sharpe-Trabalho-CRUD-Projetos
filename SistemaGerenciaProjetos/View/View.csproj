@@ -109,6 +109,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\CidadeController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EstadoController.cs" />
+    <Compile Include="Controllers\ProjetoController.cs" />
+    <Compile Include="Controllers\TarefaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -122,8 +128,22 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Categoria\Cadastro.cshtml" />
+    <Content Include="Views\Categoria\Editar.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Cliente\Alterar.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Inserir.cshtml" />
+    <Content Include="Views\Projeto\Alterar.cshtml" />
+    <Content Include="Views\Projeto\Cadastro.cshtml" />
+    <Content Include="Views\Projeto\Index.cshtml" />
+    <Content Include="Views\Tarefa\Alterar.cshtml" />
+    <Content Include="Views\Tarefa\Cadastro.cshtml" />
+    <Content Include="Views\Tarefa\Index.cshtml" />
+    <Content Include="Views\Usuario\Alterar.cshtml" />
+    <Content Include="Views\Usuario\Cadastro.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

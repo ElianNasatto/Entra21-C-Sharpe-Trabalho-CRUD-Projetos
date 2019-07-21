@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadastro</h2>
+<form action="/tarefa/insert" method="post">
+    <div>
+        <label for="campo-usuario">Usuario Responsavel</label>
+        <select name="usuario" id="campo-usuario" required="">
+            <option disabled="disabled" selected="selected">Selecione um Usuario</option>
+            @foreach (Model.Usuario Usuario in ViewBag.Usuarios)
+            {
+                <option value="@Usuario.Id">@Usuario.Nome</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="campo-projeto">Projeto</label>
+        <select name="projeto" required="">
+            <option selected="selected" disabled="disabled" value="1">Selecione um Projeto</option>
+            @foreach (Model.Projeto Projeto in ViewBag.Projetos)
+            {
+                <option value="@Projeto.Id">@Projeto.Nome</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="campo-categoria">Categoria</label>
+        <select name="categoria" id="campo-categoria" required="">
+            <option disabled="disabled" selected="selected">Selecione uma categoria</option>
+            @foreach (Model.Categoria Categoria in ViewBag.Categorias)
+            {
+                <option value="@Categoria.Id">@Categoria.Nome</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="campo-titulo">Titulo</label>
+        <input type="text" required="" name="titulo" id="campo-titulo"/>
+    </div>
+    <div>
+        <label for="campo-descricao">Descrição</label>
+        <input type="text" required="" id="campo-descricao" name="descricao" />
+    </div>
+    <div>
+        <label for="campo-duracao">Ducação</label>
+        <input type="date" required="" name="duracao" id="campo-duracao" />
+    </div>
+    <button type="submit">Salvar</button>
+</form>
+

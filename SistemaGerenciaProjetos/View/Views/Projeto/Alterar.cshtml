@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2>Alterar</h2>
+
+<form action="/projeto/alterar" method="post">
+    <div>
+        <label for="campo-cliente">Clientes</label>
+        <select name="cliente" required="" id="campo-cliente">
+            <option disabled="disabled">Selecione um cliente</option>
+            @foreach (Model.Cliente Cliente in ViewBag.Clientes)
+            {
+                if (Cliente.Id == ViewBag.Projetos.FkCliente)
+                {
+                    <option value="@Cliente.Id" selected="selected">@Cliente.Nome</option>
+                }
+                else
+                {
+                    <option value="@Cliente.Id">@Cliente.Nome</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div>
+        <label for="campo-nome"></label>
+        <input type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Projetos.Nome"/>
+    </div>
+    <div>
+        <label for="campo-data-criacao">Data Criação</label>
+        <input type="date" name="dataCriacao" id="campo-data-criacao" required="" value="@ViewBag.Projetos.DataCriacao"/>
+    </div>
+    <div>
+        <label for="campo-data-finalizacao">Data Finalização</label>
+        <input type="date" name="dataFinalizacao" id="campo-data-finalizacao" required="" value="@ViewBag.Projeto.DataFinalizacao" />
+    </div>
+    <button type="submit">Alterar</button>
+
+</form>
+
+
+

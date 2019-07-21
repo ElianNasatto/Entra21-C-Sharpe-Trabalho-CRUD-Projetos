@@ -14,8 +14,8 @@ namespace Repository
         public void Inserir(Categoria categoria)
         {
             SqlCommand comando = Conexao.Conectar();
-            comando.CommandText = "INSERT INTO categorias (nome) VALUES @NOME";
-            comando.Parameters.AddWithValue("@ID", categoria.Id);
+            comando.CommandText = "INSERT INTO categorias (nome) VALUES ( @NOME )";
+            comando.Parameters.AddWithValue("@NOME", categoria.Nome);
             comando.ExecuteNonQuery();
             comando.Connection.Close();
 
@@ -23,7 +23,7 @@ namespace Repository
 
         public void Apagar(int id)
         {
-            SqlCommand comando = new SqlCommand();
+            SqlCommand comando = Conexao.Conectar();
             comando.CommandText = "DELETE FROM categorias WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
             comando.ExecuteNonQuery();
@@ -74,5 +74,7 @@ namespace Repository
             return categoria;
             
         }
+
+        
     }
 }
