@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <a href="/estado/inserir">Adicionar Estado</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Sigla</td>
+            <td>Ação</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Model.Estado estado in ViewBag.Estados)
+        {
+            <tr>
+                <td>@estado.Id</td>
+                <td>@estado.Nome</td>
+                <td>@estado.Sigla</td>
+                <td>
+                    <a href="/cliente/alterar?id=@estado.Id">Alterar</a>
+                    <a href="/cliente/apagar?id=@estado.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Sigla</td>
+            <td>Ação</td>
+        </tr>
+    </tfoot>
+
+</table>

@@ -38,11 +38,16 @@ namespace View.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Editar(int id)
+        public ActionResult Alterar(int id)
         {
             Estado estado = repository.ObterPeloId(id);
             ViewBag.Estado = estado;
             return View();
+
+            /* ViewBag.Estado = repository.ObterPeloId(id);
+            EstadoRepository estadoRepository = new EstadoRepository();
+            ViewBag.Estados = estadoRepository.ObterTodos();
+            return View(); */
         }
 
         public ActionResult Update(int id, string nome, string sigla)
@@ -58,7 +63,7 @@ namespace View.Controllers
         public ActionResult Apagar(int id)
         {
             repository.Apagar(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index")
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2>Alterar</h2>
+<form action="/estado/update">
+    <div>
+        <label for="campo-nome">Nome</label>
+        <input type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Estados.Nome" />
+    </div>
+    <div>
+        <label for="campo-sigla">Sigla</label>
+        <input type="text" name="sigla" id="campo-sigla" required="" value="@ViewBag.Estados.Nome" />
+    </div>
+    <input type="text" hidden="hidden" value="@ViewBag.Estados.Id" name="id" />
+    <button type="submit">Alterar</button>
+</form>
