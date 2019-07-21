@@ -14,8 +14,8 @@ namespace Repository
         public void Inserir(Cliente cliente)
         {
             SqlCommand comando = Conexao.Conectar();
-            comando.CommandText = @"INSERT INTO clientes (nome,cpf,data_nascimento,numero,complemento,logradouro,cep,id_cidade)
-                VALUES (@NOME,@CPF,@DATA_NASCIMENTO,@NUMERO,@COMPLEMENTO,@LOGRADOURO,@CEP,@ID_CIDADE)";
+            comando.CommandText = @"INSERT INTO clientes (nome, cpf, data_nascimento, numero, complemento, logradouro, cep, id_cidade)
+                VALUES (@NOME, @CPF, @DATA_NASCIMENTO, @NUMERO, @COMPLEMENTO, @LOGRADOURO, @CEP, @ID_CIDADE)";
             comando.Parameters.AddWithValue("@NOME", cliente.Nome);
             comando.Parameters.AddWithValue("@CPF", cliente.Cpf);
             comando.Parameters.AddWithValue("@DATA_NASCIMENTO", cliente.DataNascimento);

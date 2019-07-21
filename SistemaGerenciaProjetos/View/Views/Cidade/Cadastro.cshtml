@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadastro</h2>
+<form action="/cidade/store">
+    <div>
+        <label for="campo-nome">Nome</label>
+        <input type="text" name="nome" id="campo-nome" required="" />
+    </div>
+    <div>
+        <label for="campo-numerohabitantes">Número Habitantes</label>
+        <input type="number" required="" id="campo-numerohabitantes" name="numeroHabitantes" />
+    </div>
+    <div>
+        <label for="campo-estado">Estado</label>
+        <select name="estado" id="campo-estado" required="">
+            <option selected="" disabled="disabled">Selecione uma cidade</option>
+            @for (int i = 0; i < @ViewBag.Estados.Count; i++)
+            {
+                <option value="@ViewBag.Estados[i].Id">@ViewBag.Estados[i].Nome</option>
+            }
+
+        </select>
+    </div>
+    <input type="text" name="id" hidden="hidden" value="@ViewBag.Cidades.Id" />
+    <button type="submit">Salvar</button>
+</form>

@@ -59,10 +59,5 @@ namespace View.Controllers
             repository.Apagar(id);
             return RedirectToAction("Index");
         }
-
-
-
-       
-      
     }
 }

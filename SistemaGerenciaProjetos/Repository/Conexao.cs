@@ -13,7 +13,7 @@ namespace Repository
         public static SqlCommand Conectar()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\View\App_Data\BD_Projeto.mdf;Integrated Security=True";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Weber\OneDrive\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
                 //NAO FUNCIONOU - ConfigurationManager.ConnectionStrings["DefautConnection"].ConnectionString;
             conexao.Open();
             SqlCommand comando = new SqlCommand();

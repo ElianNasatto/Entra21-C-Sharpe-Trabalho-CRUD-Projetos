@@ -46,15 +46,11 @@ namespace View.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Editar(int id)
+        public ActionResult Alterar(int id)
         {
-            Cidade cidade = repository.ObterPeloId(id);
+            Cidade cidade = new Cidade();
+            cidade = repository.ObterPeloId(id);
             ViewBag.Cidade = cidade;
-
-            EstadoRepository estadoRepository = new EstadoRepository();
-            List<Estado> estados = estadoRepository.ObterTodos();
-            ViewBag.Estados = estados;
-
             return View();
         }
 

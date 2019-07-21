@@ -44,7 +44,7 @@ namespace Repository
             return id;
         }
 
-        public Estado ObterPeloTodos(int id)
+        public Estado ObterPeloId(int id)
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = "SELECT * FROM estados WHERE id = @ID";
