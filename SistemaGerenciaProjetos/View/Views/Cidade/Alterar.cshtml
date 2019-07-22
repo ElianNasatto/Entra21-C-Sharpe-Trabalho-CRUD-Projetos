@@ -4,14 +4,14 @@
 }
 
 <h2>Alterar</h2>
-<form action="/cidade/update">
+<form action="/cidade/update" method="post">
     <div>
         <label for="campo-nome">Nome</label>
-        <input type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Cidades.Nome" />
+        <input type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Cidade.Nome" />
     </div>
     <div>
         <label for="campo-numerohabitantes">Número Habitantes</label>
-        <input type="number" required="" id="campo-numerohabitantes" name="numeroHabitantes" value="@ViewBag.Cidades.Cpf" />
+        <input type="number" required="" id="campo-numerohabitantes" name="numeroHabitantes" value="@ViewBag.Cidade.Nome" />
     </div>
     <div>
         <label for="campo-estado">Estado</label>
@@ -19,7 +19,7 @@
 
             @foreach (Model.Estado estado in ViewBag.Estados)
             {
-                if (estado.Id == ViewBag.Estados.IdEstado)
+                if (estado.Id == ViewBag.Cidade.IdEstado)
                 {
                     <option value="@estado.Id" selected="selected">@estado.Nome</option>
                 }
@@ -30,7 +30,7 @@
             }
         </select>
     </div>
-    <input type="text" hidden="hidden" value="@ViewBag.Estados.Id" name="id" />
+    <input type="text" hidden="hidden" value="@ViewBag.Estado.Id" name="id" />
     <button type="submit">Alterar</button>
 
 </form>

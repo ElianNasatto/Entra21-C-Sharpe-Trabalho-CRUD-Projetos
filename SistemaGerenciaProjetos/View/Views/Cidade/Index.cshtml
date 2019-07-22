@@ -7,9 +7,8 @@
 
 <title>Cidades</title>
 <div>
-    <a href="~/Views/Cidade/Cadastro"></a>
+    <a href="/cidade/cadastro">Cadastrar</a>
 </div>
-<a href="/cidade/cadastro">Inserir</a>
 <table>
     <thead>
         <tr>
@@ -28,7 +27,7 @@
                 <td>@cidade.NumeroHabitantes</td>
                 <td>
                     <a href="/cidade/alterar?id=@cidade.Id">Alterar</a>
-                    <a href="/cidade/apagar?id=@cidade">Apagar</a>
+                    <a href="/cidade/apagar?id=@cidade.Id">Apagar</a>
                 </td>
             </tr>
         }

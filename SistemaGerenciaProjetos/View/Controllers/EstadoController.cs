@@ -30,10 +30,11 @@ namespace View.Controllers
             return View();
         }
 
-        public ActionResult Store(string nome)
+        public ActionResult Store(string nome, string sigla)
         {
             Estado estado = new Estado();
             estado.Nome = nome;
+            estado.Sigla = sigla;
             repository.Inserir(estado);
             return RedirectToAction("Index");
         }
@@ -63,7 +64,7 @@ namespace View.Controllers
         public ActionResult Apagar(int id)
         {
             repository.Apagar(id);
-            return RedirectToAction("Index")
+            return RedirectToAction("Index");
         }
     }
 }

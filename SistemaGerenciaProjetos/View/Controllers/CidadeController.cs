@@ -51,6 +51,8 @@ namespace View.Controllers
             Cidade cidade = new Cidade();
             cidade = repository.ObterPeloId(id);
             ViewBag.Cidade = cidade;
+            EstadoRepository estadoRepository = new EstadoRepository();
+            ViewBag.Estados = estadoRepository.ObterTodos();
             return View();
         }
 

@@ -15,7 +15,7 @@ namespace Repository
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"INSERT INTO cidades (nome,numero_habitantes,id_estado) VALUES
-            (@NOME,@NUMERO_HABITANTES,ID_ESTADO)";
+            (@NOME,@NUMERO_HABITANTES,@ID_ESTADO)";
             comando.Parameters.AddWithValue("@NOME", cidade.Nome);
             comando.Parameters.AddWithValue("@NUMERO_HABITANTES", cidade.NumeroHabitantes);
             comando.Parameters.AddWithValue("@ID_ESTADO", cidade.IdEstado);
@@ -69,7 +69,7 @@ namespace Repository
                                     cidades.numero_habitantes AS 'numero_habitantes',
                                     estados.nome AS 'nome_estado'
                                     FROM cidades INNER JOIN estados ON(cidades.id_estado = estados.id)
-                    WHERE id = @ID";
+                    WHERE cidades.id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
