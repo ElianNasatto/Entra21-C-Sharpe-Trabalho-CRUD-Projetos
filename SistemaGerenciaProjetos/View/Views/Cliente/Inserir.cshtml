@@ -21,10 +21,12 @@
         <label for="campo-cidade">Cidade</label>
         <select name="cidade" id="campo-cidade" required="">
             <option selected="" disabled="disabled">Selecione uma cidade</option>
-            @for (int i = 0; i < @ViewBag.Cidades.Count; i++)
+            @foreach (Model.Cidade Cidade in ViewBag.Cidades)
             {
-                <option value="@ViewBag.Cidades[i].Id">@ViewBag.Cidades[i].Nome</option>
+                <option value="@Cidade.Id">@Cidade.Nome</option>
+
             }
+           
             
         </select>
     </div>

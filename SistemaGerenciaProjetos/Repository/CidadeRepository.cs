@@ -60,6 +60,24 @@ namespace Repository
             return lista;
         }
 
+        public List<Cidade> ObterTodosCombobox()
+        {
+            SqlCommand comando = Conexao.Conectar();
+            comando.CommandText = @"SELECT * FROM cidades";
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            List<Cidade> lista = new List<Cidade>();
+
+            foreach (DataRow linha in tabela.Rows)
+            {
+                Cidade cidade = new Cidade();
+                cidade.Id = Convert.ToInt32(linha["id"]);
+                cidade.Nome = linha["nome"].ToString();
+                cidade.NumeroHabitantes = Convert.ToInt32(linha["numero_habitantes"]);
+                lista.Add(cidade);
+            }
+            return lista;
+        }
         public Cidade ObterPeloId(int id)
         {
             SqlCommand comando = Conexao.Conectar();

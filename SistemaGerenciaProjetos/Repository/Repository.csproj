@@ -48,6 +48,7 @@
     <Compile Include="ClienteRepository.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="EstadoRepository.cs" />
+    <Compile Include="LoginRepository.cs" />
     <Compile Include="ProjetoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TarefaRepository.cs" />
