@@ -3,22 +3,101 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="display-4">Tela Inicial</h2>
-<div class="card text-center">
+<h2 class="display-4 mt-3 mb-4">Tela Inicial</h2>
 
-    <div class="card-body">
-        <h5 class="card-title">Bem-Vindo</h5>
-        <p class="card-text">Este é um trabalho para o curso Entra21</p>
-
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="~/Imagens/Entra21.jpg">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Bem-Vindo</h5>
+                <p>Este é um trabalho para o curso Entra 21</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/Imagens/visual_studio_2017.jpg">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Visual Studio</h5>
+                <p>Este projeto foi feio utilizando a IDE Visual Studio</p>
+            </div>
+        </div>
     </div>
-
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+    </a>
 </div>
-<div class="card" style="width: 18rem;">
-    <i class="card-img-top fas fa-user fa-2x "></i>
+</br>
 
-    <div class="card-body">
-        <h5 class="card-title">Clientes</h5>
-        <p class="card-text">Cadastre os clientes para poder adicionar projetos.</p>
-        <a class="btn btn-primary" href="/cliente/index">Ir</a>
+
+<div class="row ml-5">
+    <div class="card" style="width: 18rem;">
+        <img src="~/Imagens/estados.jpg" />
+        <div class="card-body">
+            <h5 class="card-title">Estados</h5>
+            <p class="card-text">Cadastre estados para depois adicionar cidades.</p>
+            <a class="btn btn-primary" href="/estado/index">Ir</a>
+        </div>
     </div>
+    <div class="card ml-5" style="width: 18rem;">
+        <img src="~/Imagens/cidades.jpg" />
+        <div class="card-body">
+            <h5 class="card-title">Cidades</h5>
+            <p class="card-text">Cadastre cidades para adicionar seus clientes.</p>
+            <a class="btn btn-primary" href="/cidade/index">Ir</a>
+        </div>
+    </div>
+    <div class="card ml-5" style="width: 18rem;">
+        <img src="~/Imagens/usuario.jpg" />
+
+        <div class="card-body">
+            <h5 class="card-title">Clientes</h5>
+            <p class="card-text">Cadastre os clientes para poder adicionar projetos.</p>
+            <a class="btn btn-primary" href="/cliente/index">Ir</a>
+        </div>
+    </div>
+</div>
+<div class="row ml-5 mt-2">
+    <div class="card" style="width: 18rem;">
+        <img src="~/Imagens/categoria.png" />
+
+        <div class="card-body">
+            <h5 class="card-title">Categorias</h5>
+            <p class="card-text">Cadastre categorias de tarefas.</p>
+            <a class="btn btn-primary" href="/categoria/index">Ir</a>
+        </div>
+    </div>
+    <div class="card ml-5" style="width: 18rem;">
+        <img src="~/Imagens/usuarios.jpg" />
+
+        <div class="card-body">
+            <h5 class="card-title">Usuario</h5>
+            <p class="card-text">Cadastre usuarios para login e designar tarefas.</p>
+            <a class="btn btn-primary" href="/usuario/index">Ir</a>
+        </div>
+    </div>
+    <div class="card ml-5" style="width: 18rem;">
+        <img src="~/Imagens/tarefas.jpg" />
+
+        <div class="card-body">
+            <h5 class="card-title">Tarefa</h5>
+            <p class="card-text">Cadastre tarefas para usuarios.</p>
+            <a class="btn btn-primary" href="/categoria/index">Ir</a>
+        </div>
+    </div>
+</div>
+<div class="row ml-5 mt-2">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Imagens/projetos.png" />
+
+            <div class="card-body">
+                <h5 class="card-title">Projetos</h5>
+                <p class="card-text">Cadastre projetos</p>
+                <a class="btn btn-primary" href="/projeto/index">Ir</a>
+            </div>
+        </div>
 </div>

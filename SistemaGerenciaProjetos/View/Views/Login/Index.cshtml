@@ -8,17 +8,30 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <link rel="icon" href="~/Imagens/icone.png" />
+    <title>Login - PSGP </title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/font-awesome.css" />
 </head>
 <body>
-    <form action="/login/verifica" method="post">
-        <label for="campo-login">Login</label>
-        <input type="text" required="" name="login" id="campo-login" />
-
-        <label for="campo-senha">Senha</label>
-        <input type="password" required="" name="senha" id="campo-senha" />
-
-        <button type="submit">Entrar</button>
-    </form>
+    <div class="container mt-5">
+        <label class="display-4 mb-5">Login</label>
+        <form action="/login/verifica" method="post">
+            <div class="row">
+                <div class="col-6">
+                    <label for="campo-login">Login</label>
+                    <input class="form-control" type="text" required="" name="login" id="campo-login" />
+                </div>
+                <div class="col-6">
+                    <label for="campo-senha">Senha</label>
+                    <input class="form-control" type="password" required="" name="senha" id="campo-senha" />
+                </div>
+            </div>
+                <button class="btn btn-primary mt-3" type="submit"><i class="fa fa-user"></i> Entrar</button>
+        </form>
+    </div>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

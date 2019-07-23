@@ -109,6 +109,16 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Imagens\categoria.png" />
+    <Content Include="Imagens\cidades.jpg" />
+    <Content Include="Imagens\Entra21.jpg" />
+    <Content Include="Imagens\estados.jpg" />
+    <Content Include="Imagens\icone.png" />
+    <Content Include="Imagens\projetos.png" />
+    <Content Include="Imagens\tarefas.jpg" />
+    <Content Include="Imagens\usuario.jpg" />
+    <Content Include="Imagens\usuarios.jpg" />
+    <Content Include="Imagens\visual_studio_2017.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
