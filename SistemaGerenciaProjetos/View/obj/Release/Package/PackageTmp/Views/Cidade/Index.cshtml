@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<title>Lista de Cidades</title>
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Lista de Cidades</h2>
+    <div>
+        <a class="btn btn-primary float-right mb-3" href="/cidade/cadastro"><i class="fa fa-plus"></i> Cadastrar</a>
+    </div>
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Número de Habitantes</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Model.Cidade cidade in ViewBag.Cidades)
+            {
+                <tr>
+                    <td>@cidade.Id</td>
+                    <td>@cidade.Nome</td>
+                    <td>@cidade.NumeroHabitantes</td>
+                    <td>
+                        <a class="btn btn-info" href="/cidade/alterar?id=@cidade.Id"><i class="fa fa-edit"></i> Alterar</a>
+                        <a class="btn btn-danger" href="/cidade/apagar?id=@cidade.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Número de Habitantes</th>
+                <th>Ação</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

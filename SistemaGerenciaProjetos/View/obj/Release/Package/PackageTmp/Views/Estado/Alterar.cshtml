@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<title>Alterando Estado</title>
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Alterarando Estado @ViewBag.Estado.Nome</h2>
+    <form action="/estado/update" method="post">
+        <div>
+            <label for="campo-nome">Nome</label>
+            <input type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Estado.Nome" class="form-control" />
+        </div>
+        <div>
+            <label for="campo-sigla">Sigla</label>
+            <input type="text" name="sigla" id="campo-sigla" required="" value="@ViewBag.Estado.Sigla" class="form-control" />
+        </div>
+        <input type="text" hidden="hidden" value="@ViewBag.Estado.Id" name="id" />
+        <div>
+            <button class="btn btn-success float-right mt-3" type="submit">
+                <i class="fa fa-edit"></i> Alterar
+            </button>
+        </div>
+    </form>
+</div>

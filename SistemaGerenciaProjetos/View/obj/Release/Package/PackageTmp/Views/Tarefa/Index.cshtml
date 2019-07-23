@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="display-4 mt-3 mb-3">Lista de Tarefas</h2>
+<title>Lista de Tarefas</title>
+<div>
+    <a class="btn btn-primary mb-3 float-right" href="/tarefa/cadastro"><i class="fa fa-plus"></i> Adicionar tarefa</a>
+</div>
+<table class="table table-light table-hover table-striped">
+    <thead class="table thead-dark">
+        <tr>
+            <td>Id</td>
+            <td>Usuario Responsavel</td>
+            <td>Projeto</td>
+            <td>Categoria</td>
+            <td>Titulo</td>
+            <td>Descricão</td>
+            <td>Duração</td>
+            <td>Ação</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Model.Tarefa  tarefa in ViewBag.Tarefa)
+        {
+            <tr>
+                <td>@tarefa.Id</td>
+                <td>@tarefa.Usuario.Nome</td>
+                <td>@tarefa.Projeto.Nome</td>
+                <td>@tarefa.Categoria.Nome</td>
+                <td>@tarefa.Titulo</td>
+                <td>@tarefa.Descricao</td>
+                <td>@tarefa.Duracao</td>
+                <td>
+                    <a class="btn btn-info" href="/tarefa/alterar?id=@tarefa.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-danger" href="/tarefa/apagar?id=@tarefa.Id"><i class="fa fa-trash"></i> Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot class="thead-light">
+        <tr>
+            <td>Id</td>
+            <td>Usuario Responsavel</td>
+            <td>Projeto</td>
+            <td>Categoria</td>
+            <td>Titulo</td>
+            <td>Descricão</td>
+            <td>Duração</td>
+            <td>Ação</td>
+        </tr>
+    </tfoot>
+</table>
+
+

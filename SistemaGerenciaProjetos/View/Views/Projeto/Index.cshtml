@@ -3,46 +3,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="display-4 mt-3 mb-3">Lista de Projetos</h2>
 <title>Lista de Proejtos</title>
-<div>
-    <a class="btn btn-primary mb-3 float-right" href="/projeto/cadastro"><i class="fa fa-plus"></i> Adicionar Projeto</a>
-</div>
-<table class="table table-hover table-striped table-light">
-    <thead class="thead-light">
-        <tr>
-            <td>Id</td>
-            <td>Nome Projeto</td>
-            <td>Nome Cliente</td>
-            <td>Data Criação</td>
-            <td>Data Finalização</td>
-            <td>Ação</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Model.Projeto Projeto in ViewBag.Projetos)
-        {
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Lista de Projetos</h2>
+    <div>
+        <a class="btn btn-primary mb-3 float-right" href="/projeto/cadastro"><i class="fa fa-plus"></i> Adicionar Projeto</a>
+    </div>
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="thead-light">
             <tr>
-                <td>@Projeto.Id</td>
-                <td>@Projeto.Nome</td>
-                <td>@Projeto.Cliente.Nome</td>
-                <td>@Projeto.DataCriacao</td>
-                <td>@Projeto.DataFinalizacao</td>
-                <td>
-                    <a class="btn btn-info" href="/projeto/alterar?id=@Projeto.Id"><i class="fa fa-edit"></i> Alterar</a>
-                    <a class="btn btn-danger" href="/projeto/apagar?id=@Projeto.Id"><i class="fa fa-trash"></i> Apagar</a>
-                </td>
+                <td>Id</td>
+                <td>Nome Projeto</td>
+                <td>Nome Cliente</td>
+                <td>Data Criação</td>
+                <td>Data Finalização</td>
+                <td>Ação</td>
             </tr>
-        }
-    </tbody>
-    <tfoot>
-        <tr>
-            <td>Id</td>
-            <td>Nome Projeto</td>
-            <td>Nome Cliente</td>
-            <td>Data Criação</td>
-            <td>Data Finalização</td>
-            <td>Ação</td>
-        </tr>
-    </tfoot>
-</table>
+        </thead>
+        <tbody>
+            @foreach (Model.Projeto Projeto in ViewBag.Projetos)
+            {
+                <tr>
+                    <td>@Projeto.Id</td>
+                    <td>@Projeto.Nome</td>
+                    <td>@Projeto.Cliente.Nome</td>
+                    <td>@Projeto.DataCriacao</td>
+                    <td>@Projeto.DataFinalizacao</td>
+                    <td>
+                        <a class="btn btn-outline-info" href="/projeto/alterar?id=@Projeto.Id"><i class="fa fa-edit"></i> Alterar</a>
+                        <a class="btn btn-outline-danger" href="/projeto/apagar?id=@Projeto.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Id</td>
+                <td>Nome Projeto</td>
+                <td>Nome Cliente</td>
+                <td>Data Criação</td>
+                <td>Data Finalização</td>
+                <td>Ação</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2 class="display-4 mt-3 mb-3">Alterarando Tarefa @ViewBag.Tarefas.Titulo</h2>
+<title>Alterando Tarefa</title>
+<form action="/tarefa/update" method="post">
+    <div>
+        <label for="campo-usuario">Usuario Responsavel</label>
+        <select class="form-control" name="usuario" id="campo-usuario" required="">
+            <option disabled="disabled">Selecione um Usuario</option>
+            @foreach (Model.Usuario Usuario in ViewBag.Usuarios)
+            {
+                if (Usuario.Id == ViewBag.Tarefas.FkUsuario)
+                {
+                    <option value="@Usuario.Id" selected="selected">@Usuario.Nome</option>
+                }
+                else
+                {
+                    <option value="@Usuario.Id">@Usuario.Nome</option>
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <label for="campo-projeto">Projeto</label>
+        <select class="form-control" name="projeto" required="">
+            <option selected="selected" disabled="disabled" value="1">Selecione um Projeto</option>
+            @foreach (Model.Projeto Projeto in ViewBag.Projetos)
+            {
+                if (Projeto.Id == ViewBag.Tarefas.FkProjeto)
+                {
+                    <option value="@Projeto.Id" selected="selected">@Projeto.Nome</option>
+                }
+                else
+                {
+                    <option value="@Projeto.Id">@Projeto.Nome</option>
+                }
+            }
+        </select class="form-control">
+    </div>
+    <div>
+        <label for="campo-categoria">Categoria</label>
+        <select class="form-control" name="categoria" id="campo-categoria" required="">
+            <option disabled="disabled" selected="selected">Selecione uma categoria</option>
+            @foreach (Model.Categoria Categoria in ViewBag.Categorias)
+            {
+                if (Categoria.Id == ViewBag.Tarefas.FkCategoria)
+                {
+                    <option value="@Categoria.Id" selected="selected">@Categoria.Nome</option>
+                }
+                else
+                {
+                    <option value="@Categoria.Id">@Categoria.Nome</option>
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <label for="campo-titulo">Titulo</label>
+        <input class="form-control" type="text" required="" name="titulo" id="campo-titulo" value="@ViewBag.Tarefas.Titulo" />
+    </div>
+    <div>
+        <label for="campo-descricao">Descrição</label>
+        <input class="form-control" type="text" required="" id="campo-descricao" name="descricao" value="@ViewBag.Tarefas.Descricao" />
+    </div>
+    <div>
+        <label for="campo-duracao">Ducação</label>
+        <input class="form-control" type="date" required="" name="duracao" id="campo-duracao" value="@Convert.ToDateTime(@ViewBag.Tarefas.Duracao)" />
+    </div>
+    <input type="text" hidden="hidden" name="id" value="@ViewBag.Tarefas.Id" />
+    <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Alterar</button>
+</form>

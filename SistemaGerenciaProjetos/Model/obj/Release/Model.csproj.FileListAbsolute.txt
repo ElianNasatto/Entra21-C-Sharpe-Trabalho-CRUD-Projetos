@@ -1,0 +1,6 @@
+C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\bin\Release\Model.dll
+C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\bin\Release\Model.pdb
+C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Release\Model.csprojAssemblyReference.cache
+C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Release\Model.dll
+C:\Users\elian\Documents\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Release\Model.pdb

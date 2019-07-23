@@ -3,34 +3,36 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h2 class="display-4 mt-3 mb-3">Cadastro de Projeto</h2>
 <title>Cadastro de Projeto</title>
-<form action="/projeto/insert" method="post">
-    <div>
-        <label for="campo-cliente">Cliente</label>
-        <select class="form-control" id="campo-cliente" name="cliente" required="">
-            <option disabled="disabled" selected="selected">Selecione um cliente</option>
-            @foreach (Model.Cliente Cliente in ViewBag.Clientes)
-            {
-                <option value="@Cliente.Id">@Cliente.Nome</option>
-            }
-        </select>
-    </div>
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Cadastro de Projeto</h2>
+    <form action="/projeto/insert" method="post">
+        <div>
+            <label for="campo-cliente">Cliente</label>
+            <select class="form-control" id="campo-cliente" name="cliente" required="">
+                <option disabled="disabled" selected="selected">Selecione um cliente</option>
+                @foreach (Model.Cliente Cliente in ViewBag.Clientes)
+                {
+                    <option value="@Cliente.Id">@Cliente.Nome</option>
+                }
+            </select>
+        </div>
 
-    <div>
-        <label for="campo-nome">Nome</label>
-        <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <label for="campo-data-criacao">Data Criação</label>
-            <input class="form-control" type="date" name="dataCriacao" id="campo-data-criacao" required="" />
+        <div>
+            <label for="campo-nome">Nome</label>
+            <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
         </div>
-        <div class="col-6">
-            <label for="campo-data-finalizacao">Data Finalização</label>
-            <input class="form-control" type="date" name="dataFinalizacao" id="campo-data-finalizacao" required="" />
+        <div class="row">
+            <div class="col-6">
+                <label for="campo-data-criacao">Data Criação</label>
+                <input class="form-control" type="date" name="dataCriacao" id="campo-data-criacao" required="" />
+            </div>
+            <div class="col-6">
+                <label for="campo-data-finalizacao">Data Finalização</label>
+                <input class="form-control" type="date" name="dataFinalizacao" id="campo-data-finalizacao" required="" />
+            </div>
         </div>
-    </div>
-    <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
-</form>
+        <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
+    </form>
+</div>
 
