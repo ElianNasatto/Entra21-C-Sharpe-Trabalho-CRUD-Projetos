@@ -3,12 +3,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="display-4 mt-3 mb-3">Lista de Projetos</h2>
+<title>Lista de Proejtos</title>
 <div>
-    <a href="/projeto/cadastro">Adicionar Projeto</a>
+    <a class="btn btn-primary mb-3 float-right" href="/projeto/cadastro"><i class="fa fa-plus"></i> Adicionar Projeto</a>
 </div>
-<table>
-    <thead>
+<table class="table table-hover table-striped table-light">
+    <thead class="thead-light">
         <tr>
             <td>Id</td>
             <td>Nome Projeto</td>
@@ -28,8 +29,8 @@
                 <td>@Projeto.DataCriacao</td>
                 <td>@Projeto.DataFinalizacao</td>
                 <td>
-                    <a href="/projeto/alterar?id=@Projeto.Id">Alterar</a>
-                    <a href="/projeto/apagar?id=@Projeto.Id">Apagar</a>
+                    <a class="btn btn-info" href="/projeto/alterar?id=@Projeto.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-danger" href="/projeto/apagar?id=@Projeto.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }
