@@ -3,8 +3,8 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h2 class="display-4">Cadastro</h2>
-
+<h2 class="display-4">Cadastro de Estado</h2>
+<title>Cadastro de Estado</title>
 <form action="/estado/store" method="post">
     <div class="container">
         <div class="row">
@@ -21,11 +21,9 @@
                         <input class="form-control" type="text" name="sigla" id="campo-sigla" required="" placeholder="Sigla do Estado" />
                     </div>
                 </div>
+                <button class="btn btn-success mr-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-success float-right mr-3" type="submit">Salvar</button>
     </div>
 
 </form>

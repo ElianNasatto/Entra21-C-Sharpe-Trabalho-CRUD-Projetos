@@ -3,15 +3,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2 class="display-4 mt-3 mb-3">Lista de Categorias</h2>
 <title>Categorias</title>
 <div>
-    <a href="~/Views/Categoria/Cadastro"></a>
+    <a class="btn btn-primary mb-3 float-right" href="/categoria/cadastro"><i class="fa fa-plus"></i> Cadastrar</a>
 </div>
-<a href="/categoria/cadastro">Inserir</a>
-<table>
-    <thead>
+<table class="table table-light table-striped table-bordered">
+    <thead class="thead-dark">
         <tr>
             <th>Id</th>
             <th>Nome</th>
@@ -27,8 +25,8 @@
                 <td>@categoria.Id</td>
                 <td>@categoria.Nome</td>
                 <td>
-                    <a href="/categoria/editar?id=@categoria.Id">Alterar</a>
-                    <a href="/categoria/apagar?id=@categoria.Id">Apagar</a>
+                    <a class="btn btn-info" href="/categoria/editar?id=@categoria.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-danger" href="/categoria/apagar?id=@categoria.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
 
             </tr>
@@ -36,7 +34,7 @@
     </tbody>
 
 
-    <tfoot>
+    <tfoot class="thead-dark">
         <tr>
             <th>Id</th>
             <th>Nome</th>

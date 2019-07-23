@@ -3,14 +3,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="display-4">Lista de Cidades</h2>
 
-<title>Cidades</title>
+<title>Lista de Cidades</title>
 <div>
-    <a href="/cidade/cadastro">Cadastrar</a>
+    <a class="btn btn-primary float-right mb-3" href="/cidade/cadastro"><i class="fa fa-plus"></i> Cadastrar</a>
 </div>
-<table>
-    <thead>
+<table class="table table-bordered table-hover table-light table-striped">
+    <thead class="thead-dark">
         <tr>
             <th>Id</th>
             <th>Nome</th>
@@ -26,13 +26,13 @@
                 <td>@cidade.Nome</td>
                 <td>@cidade.NumeroHabitantes</td>
                 <td>
-                    <a href="/cidade/alterar?id=@cidade.Id">Alterar</a>
-                    <a href="/cidade/apagar?id=@cidade.Id">Apagar</a>
+                    <a class="btn btn-info" href="/cidade/alterar?id=@cidade.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-danger" href="/cidade/apagar?id=@cidade.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }
     </tbody>
-    <tfoot>
+    <tfoot class="thead-dark">
         <tr>
             <th>Id</th>
             <th>Nome</th>

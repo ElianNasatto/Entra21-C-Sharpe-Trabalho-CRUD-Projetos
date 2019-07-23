@@ -24,7 +24,7 @@ namespace View.Controllers
         public ActionResult Inserir()
         {
             CidadeRepository cidadeRepository = new CidadeRepository();
-            ViewBag.Cidades = cidadeRepository.ObterTodosCombobox();
+            ViewBag.Cidades = cidadeRepository.ObterTodos();
             return View();
         }
         public ActionResult Apagar(int id)

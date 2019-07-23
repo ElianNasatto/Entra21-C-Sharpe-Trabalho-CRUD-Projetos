@@ -4,12 +4,13 @@
 }
 
 <h2 class="display-4">Lista de Estados</h2>
+<title>Lista de Estados</title>
 
 <div>
     <a class="btn btn-primary float-right mb-3" href="/estado/cadastro">
         <i class="fa fa-plus-circle"></i> Adicionar Estado</a>
 </div>
-<table class="table table-striped table-hover table-bordered ">
+<table class="table table-bordered table-hover table-light table-striped">
     <thead>
         <tr class="thead-dark">
             <td>Id</td>
@@ -26,8 +27,8 @@
                 <td>@estado.Nome</td>
                 <td>@estado.Sigla</td>
                 <td>
-                    <a class="btn btn-info" href="/estado/alterar?id=@estado.Id">Alterar</a>
-                    <a class="btn btn-danger" href="/estado/apagar?id=@estado.Id">Apagar</a>
+                    <a class="btn btn-info" href="/estado/alterar?id=@estado.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-danger" href="/estado/apagar?id=@estado.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }

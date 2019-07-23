@@ -3,50 +3,50 @@
     ViewBag.Title = "Inserir";
 }
 
-<h2>Inserir</h2>
+<h2 class="display-4">Inseririndo cliente</h2>
+<title>Inserindo cliente</title>
 <form action="/cliente/insert">
     <div>
         <label for="campo-nome">Nome</label>
-        <input type="text" name="nome" id="campo-nome" required="" />
+        <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
     </div>
     <div>
         <label for="campo-cpf">CPF</label>
-        <input type="number" required="" id="campo-cpf" name="cpf" />
+        <input class="form-control" type="number" required="" id="campo-cpf" name="cpf" />
     </div>
     <div>
         <label for="campo-data-nascimento">Data Nascimento</label>
-        <input type="date" id="campo-data-nascimento" name="dataNascimento" required="" />
+        <input class="form-control" type="date" id="campo-data-nascimento" name="dataNascimento" required="" />
     </div>
     <div>
         <label for="campo-cidade">Cidade</label>
-        <select name="cidade" id="campo-cidade" required="">
+        <select class="form-control" name="cidade" id="campo-cidade" required="">
             <option selected="" disabled="disabled">Selecione uma cidade</option>
             @foreach (Model.Cidade Cidade in ViewBag.Cidades)
             {
-                <option value="@Cidade.Id">@Cidade.Nome</option>
-
+                    <option value="@Cidade.Id">@Cidade.Nome</option>
             }
-           
-            
+
+
         </select>
     </div>
     <div>
         <label for="campo-numero">Numero</label>
-        <input type="number" required="" name="numero" id="campo-numero" />
+        <input class="form-control" type="number" required="" name="numero" id="campo-numero" />
     </div>
     <div>
         <label for="campo-complemento">Complemento</label>
-        <input type="text" required="" name="complemento" id="campo-complemento" />
+        <input class="form-control" type="text" required="" name="complemento" id="campo-complemento" />
     </div>
     <div>
         <label for="campo-logradouro">Logradouro</label>
-        <input type="text" required="" name="logradouro" id="campo-logradouro" />
+        <input class="form-control" type="text" required="" name="logradouro" id="campo-logradouro" />
     </div>
     <div>
         <label for="campo-cep">Cep</label>
-        <input type="text" required="" name="cep" id="campo-cep" />
+        <input class="form-control" type="text" required="" name="cep" id="campo-cep" />
     </div>
     <input type="text" name="id" hidden="hidden" value="@ViewBag.Clientes.Id" />
-    <button type="submit">Salvar</button>
+    <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
 </form>
 

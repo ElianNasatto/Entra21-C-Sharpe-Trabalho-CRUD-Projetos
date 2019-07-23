@@ -2,23 +2,23 @@
 @{
     ViewBag.Title = "Alterar";
 }
-
-<h2>Alterar</h2>
+<!--Está dando erro no combobox - REFERENCIA NULA -->
+<h2 class="display-4 mb-3 mb-3">Alterar</h2>
 <form action="/cidade/update" method="post">
     <div>
         <label for="campo-nome">Nome</label>
-        <input type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Cidade.Nome" />
+        <input class="form-control" type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Cidade.Nome" />
     </div>
     <div>
         <label for="campo-numerohabitantes">Número Habitantes</label>
-        <input type="number" required="" id="campo-numerohabitantes" name="numeroHabitantes" value="@ViewBag.Cidade.Nome" />
+        <input class="form-control" type="number" required="" id="campo-numerohabitantes" name="numeroHabitantes" value="@ViewBag.Cidade.Nome" />
     </div>
     <div>
         <label for="campo-estado">Estado</label>
-        <select name="estado" id="campo-estado" required="">
-
-            @foreach (Model.Estado estado in ViewBag.Estados)
-            {
+        <select class="form-control" name="estado" id="campo-estado" required="">
+            <option selected="selected" disabled="disabled">Selecione um Estado</option>
+              @foreach (Model.Estado estado in ViewBag.Estados)
+                {
                 if (estado.Id == ViewBag.Cidade.IdEstado)
                 {
                     <option value="@estado.Id" selected="selected">@estado.Nome</option>
@@ -31,6 +31,6 @@
         </select>
     </div>
     <input type="text" hidden="hidden" value="@ViewBag.Estado.Id" name="id" />
-    <button type="submit">Alterar</button>
+    <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Alterar</button>
 
 </form>
