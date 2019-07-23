@@ -3,26 +3,28 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h2 class="display-4 mt-3 mb-3">Cadastro de Usuario</h2>
 <title>Cadastro de Usuario</title>
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Cadastro de Usuario</h2>
 
-<form action="/usuario/insert" method="post">
-    <div>
+    <form action="/usuario/insert" method="post">
         <div>
-            <label for="campo-nome">Nome</label>
-            <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <label for="campo-login">Login</label>
-                <input class="form-control" type="text" name="login" id="campo-login" required="" />
+            <div>
+                <label for="campo-nome">Nome</label>
+                <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
             </div>
-            <div class="col-6">
-                <label for="campo-senha">Senha</label>
-                <input class="form-control" type="password" name="senha" id="campo-senha" required="" />
+            <div class="row">
+                <div class="col-6">
+                    <label for="campo-login">Login</label>
+                    <input class="form-control" type="text" name="login" id="campo-login" required="" />
+                </div>
+                <div class="col-6">
+                    <label for="campo-senha">Senha</label>
+                    <input class="form-control" type="password" name="senha" id="campo-senha" required="" />
+                </div>
             </div>
-        </div>
             <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
-    </div>
+        </div>
 
-</form>
+    </form>
+</div>

@@ -3,13 +3,15 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h2 class="display-4 mt-3 mb-3">Cadastro de Categoria</h2>
 <title>Cadastro de Categoria</title>
-<form action="/categoria/store" method="post">
-    <div>
-        <label for="campo-nome">Nome</label>
-        <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
-    </div>
-    <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
-</form>
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Cadastro de Categoria</h2>
+    <form action="/categoria/store" method="post">
+        <div>
+            <label for="campo-nome">Nome</label>
+            <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
+        </div>
+        <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
+    </form>
+</div>
 

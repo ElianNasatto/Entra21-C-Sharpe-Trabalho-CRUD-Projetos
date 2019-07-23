@@ -3,42 +3,44 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="display-4 mt-3 mb-3">Lista de Categorias</h2>
 <title>Categorias</title>
-<div>
-    <a class="btn btn-primary mb-3 float-right" href="/categoria/cadastro"><i class="fa fa-plus"></i> Cadastrar</a>
-</div>
-<table class="table table-light table-striped table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Ação</th>
-        </tr>
-    </thead>
-
-
-    <tbody>
-        @foreach (Model.Categoria categoria in ViewBag.Categorias)
-        {
+<h2 class="display-4 mt-3 mb-3">Lista de Categorias</h2>
+<div class="container">
+    <div>
+        <a class="btn btn-primary mb-3 float-right" href="/categoria/cadastro"><i class="fa fa-plus"></i> Cadastrar</a>
+    </div>
+    <table class="table table-light table-striped table-bordered">
+        <thead class="thead-dark">
             <tr>
-                <td>@categoria.Id</td>
-                <td>@categoria.Nome</td>
-                <td>
-                    <a class="btn btn-info" href="/categoria/editar?id=@categoria.Id"><i class="fa fa-edit"></i> Alterar</a>
-                    <a class="btn btn-danger" href="/categoria/apagar?id=@categoria.Id"><i class="fa fa-trash"></i> Apagar</a>
-                </td>
-
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Ação</th>
             </tr>
-        }
-    </tbody>
+        </thead>
 
 
-    <tfoot class="thead-dark">
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Ação</th>
-        </tr>
-    </tfoot>
-</table>
+        <tbody>
+            @foreach (Model.Categoria categoria in ViewBag.Categorias)
+            {
+                <tr>
+                    <td>@categoria.Id</td>
+                    <td>@categoria.Nome</td>
+                    <td>
+                        <a class="btn btn-outline-info" href="/categoria/editar?id=@categoria.Id"><i class="fa fa-edit"></i> Alterar</a>
+                        <a class="btn btn-outline-danger" href="/categoria/apagar?id=@categoria.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+
+        <tfoot class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Ação</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

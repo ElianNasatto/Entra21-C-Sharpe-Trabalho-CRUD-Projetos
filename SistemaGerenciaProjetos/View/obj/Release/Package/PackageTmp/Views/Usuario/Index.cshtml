@@ -3,44 +3,46 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="display-4 mt-3 mb-3">Lista de Usuarios</h2>
 <title>Lista de Usuarios</title>
-<div>
-    <a class="btn btn-primary mb-3 float-right" href="/usuario/cadastro"><i class="fa fa-plus"></i> Cadastrar</a>
-</div>
-<table class="table table-light table-hover table-striped">
-    <thead class="thead-dark">
-        <tr>
-            <td>Id</td>
-            <td>Login</td>
-            <td>Nome</td>
-            <td>Ação</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (Model.Usuario Usuario in ViewBag.Usuarios)
-        {
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Lista de Usuarios</h2>
+    <div>
+        <a class="btn btn-primary mb-3 float-right" href="/usuario/cadastro"><i class="fa fa-plus"></i> Cadastrar</a>
+    </div>
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="thead-dark">
             <tr>
-                <td>@Usuario.Id</td>
-                <td>@Usuario.Login</td>
-                <td>@Usuario.Nome</td>
-                <td>
-                    <a class="btn btn-info" href="/usuario/alterar?id=@Usuario.Id"><i class="fa fa-edit"></i> Alterar</a>
-                    <a class="btn btn-danger" href="/usuario/apagar?id=@Usuario.Id"><i class="fa fa-trash"></i> Apagar</a>
-                </td>
+                <td>Id</td>
+                <td>Login</td>
+                <td>Nome</td>
+                <td>Ação</td>
             </tr>
-        }
-    </tbody>
+        </thead>
 
-    <tfoot>
-        <tr>
-            <td>Id</td>
-            <td>Login</td>
-            <td>Nome</td>
-            <td>Ação</td>
-        </tr>
-    </tfoot>
+        <tbody>
+            @foreach (Model.Usuario Usuario in ViewBag.Usuarios)
+            {
+                <tr>
+                    <td>@Usuario.Id</td>
+                    <td>@Usuario.Login</td>
+                    <td>@Usuario.Nome</td>
+                    <td>
+                        <a class="btn btn-outline-info" href="/usuario/alterar?id=@Usuario.Id"><i class="fa fa-edit"></i> Alterar</a>
+                        <a class="btn btn-outline-danger" href="/usuario/apagar?id=@Usuario.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
 
-</table>
+        <tfoot>
+            <tr>
+                <td>Id</td>
+                <td>Login</td>
+                <td>Nome</td>
+                <td>Ação</td>
+            </tr>
+        </tfoot>
 
+    </table>
+
+</div>
