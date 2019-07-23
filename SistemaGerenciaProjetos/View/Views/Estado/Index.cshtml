@@ -3,43 +3,46 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="display-4">Lista de Estados</h2>
 <title>Lista de Estados</title>
 
-<div>
-    <a class="btn btn-primary float-right mb-3" href="/estado/cadastro">
-        <i class="fa fa-plus-circle"></i> Adicionar Estado</a>
-</div>
-<table class="table table-bordered table-hover table-light table-striped">
-    <thead>
-        <tr class="thead-dark">
-            <td>Id</td>
-            <td>Nome</td>
-            <td>Sigla</td>
-            <td>Ação</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Model.Estado estado in ViewBag.Estados)
-        {
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Lista de Estados</h2>
+    <div>
+        <a class="btn btn-primary float-right mb-3" href="/estado/cadastro">
+            <i class="fa fa-plus-circle"></i> Adicionar Estado
+        </a>
+    </div>
+    <table class="table table-striped table-hover table-bordered table-light">
+        <thead>
             <tr>
-                <td>@estado.Id</td>
-                <td>@estado.Nome</td>
-                <td>@estado.Sigla</td>
-                <td>
-                    <a class="btn btn-info" href="/estado/alterar?id=@estado.Id"><i class="fa fa-edit"></i> Alterar</a>
-                    <a class="btn btn-danger" href="/estado/apagar?id=@estado.Id"><i class="fa fa-trash"></i> Apagar</a>
-                </td>
+                <td>Id</td>
+                <td>Nome</td>
+                <td>Sigla</td>
+                <td>Ação</td>
             </tr>
-        }
-    </tbody>
-    <tfoot class="thead-dark">
-        <tr>
-            <td>Id</td>
-            <td>Nome</td>
-            <td>Sigla</td>
-            <td>Ação</td>
-        </tr>
-    </tfoot>
+        </thead>
+        <tbody>
+            @foreach (Model.Estado estado in ViewBag.Estados)
+            {
+                <tr>
+                    <td>@estado.Id</td>
+                    <td>@estado.Nome</td>
+                    <td>@estado.Sigla</td>
+                    <td>
+                        <a class="btn btn-info" href="/estado/alterar?id=@estado.Id"><i class="fa fa-edit"></i> Alterar</a>
+                        <a class="btn btn-danger" href="/estado/apagar?id=@estado.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Id</td>
+                <td>Nome</td>
+                <td>Sigla</td>
+                <td>Ação</td>
+            </tr>
+        </tfoot>
 
-</table>
+    </table>
+</div>
