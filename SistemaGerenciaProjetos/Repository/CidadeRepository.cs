@@ -40,7 +40,9 @@ namespace Repository
                                     cidades.nome AS 'nome_cidade',
                                     cidades.id_estado AS 'idEstado',
                                     cidades.numero_habitantes AS 'numero_habitantes',
-                                    estados.nome AS 'nome_estado'
+                                    estados.id AS 'idEstado',
+                                    estados.nome AS 'nome_estado',
+                                    estados.sigla AS 'sigla'
                                     FROM cidades INNER JOIN estados ON (cidades.id_estado = estados.id)";
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
@@ -55,6 +57,7 @@ namespace Repository
                 cidade.IdEstado = Convert.ToInt32(linha["idEstado"]);
                 cidade.Estado = new Estado();
                 cidade.Estado.Nome = linha["nome_estado"].ToString();
+                cidade.Estado.Sigla = linha["sigla"].ToString();
                 lista.Add(cidade);   
             }
             return lista;
@@ -63,7 +66,11 @@ namespace Repository
         public List<Cidade> ObterTodosCombobox()
         {
             SqlCommand comando = Conexao.Conectar();
-            comando.CommandText = @"SELECT * FROM cidades";
+            comando.CommandText = @"SELECT cidades.id AS 'id_cidade',
+                                        cidades.nome AS 'nome_cidade',
+                                        estados.sigla AS 'estado'
+                                    FROM cidades 
+                                    INNER JOIN estados ON (estados.id = cidades.id_estado)";
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
             List<Cidade> lista = new List<Cidade>();
@@ -74,6 +81,8 @@ namespace Repository
                 cidade.Id = Convert.ToInt32(linha["id"]);
                 cidade.Nome = linha["nome"].ToString();
                 cidade.NumeroHabitantes = Convert.ToInt32(linha["numero_habitantes"]);
+                cidade.Estado = new Estado();
+                cidade.Estado.Sigla = linha["estado"].ToString();
                 lista.Add(cidade);
             }
             return lista;
@@ -85,6 +94,7 @@ namespace Repository
                                     cidades.id AS 'id_cidade',
                                     cidades.nome AS 'nome_cidade',
                                     cidades.numero_habitantes AS 'numero_habitantes',
+                                    estados.id AS 'id_estado',
                                     estados.nome AS 'nome_estado'
                                     FROM cidades INNER JOIN estados ON(cidades.id_estado = estados.id)
                     WHERE cidades.id = @ID";
@@ -98,6 +108,7 @@ namespace Repository
             cidade.Nome = linha["nome_cidade"].ToString();
             cidade.NumeroHabitantes = Convert.ToInt32(linha["numero_habitantes"]);
             cidade.Estado = new Estado();
+            cidade.Estado.Id = Convert.ToInt32(linha["id_estado"]);
             cidade.Estado.Nome = linha["nome_estado"].ToString();
 
             return cidade;
@@ -105,8 +116,8 @@ namespace Repository
 
         public void Atualizar(Cidade cidade)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandText = "UPDATE cidades SET nome = @NOME, numero_habitantes = @NUMERO_HABITANTES, id_estado = @ID_ESTADO";
+            SqlCommand comando = Conexao.Conectar();
+            comando.CommandText = "UPDATE cidades SET nome = @NOME, numero_habitantes = @NUMERO_HABITANTES, id_estado = @ID_ESTADO WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", cidade.Id);
             comando.Parameters.AddWithValue("@NOME", cidade.Nome);
             comando.Parameters.AddWithValue("@NUMERO_HABITANTES", cidade.NumeroHabitantes);

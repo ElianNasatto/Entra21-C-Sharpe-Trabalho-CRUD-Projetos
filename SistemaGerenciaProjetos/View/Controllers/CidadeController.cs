@@ -87,7 +87,7 @@ namespace View.Controllers
             }
         }
 
-        public ActionResult Update(int id, int estado, string nome, int numeroHabitates)
+        public ActionResult Update(int id, int estado, string nome, int numeroHabitantes)
         {
             if (LoginController.retorno == true)
             {
@@ -95,7 +95,7 @@ namespace View.Controllers
                 cidade.Id = id;
                 cidade.IdEstado = estado;
                 cidade.Nome = nome;
-                cidade.NumeroHabitantes = numeroHabitates;
+                cidade.NumeroHabitantes = numeroHabitantes;
 
                 repository.Atualizar(cidade);
                 return RedirectToAction("Index");

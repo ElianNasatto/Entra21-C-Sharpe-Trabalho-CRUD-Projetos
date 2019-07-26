@@ -2,35 +2,40 @@
 @{
     ViewBag.Title = "Alterar";
 }
-<!--Está dando erro no combobox - REFERENCIA NULA -->
-<h2 class="display-4 mb-3 mb-3">Alterar</h2>
-<form action="/cidade/update" method="post">
-    <div>
-        <label for="campo-nome">Nome</label>
-        <input class="form-control" type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Cidade.Nome" />
-    </div>
-    <div>
-        <label for="campo-numerohabitantes">Número Habitantes</label>
-        <input class="form-control" type="number" required="" id="campo-numerohabitantes" name="numeroHabitantes" value="@ViewBag.Cidade.Nome" />
-    </div>
-    <div>
-        <label for="campo-estado">Estado</label>
-        <select class="form-control" name="estado" id="campo-estado" required="">
-            <option selected="selected" disabled="disabled">Selecione um Estado</option>
-              @foreach (Model.Estado estado in ViewBag.Estados)
-                {
-                if (estado.Id == ViewBag.Cidade.IdEstado)
-                {
-                    <option value="@estado.Id" selected="selected">@estado.Nome</option>
-                }
-                else
-                {
-                    <option value="@estado.Id">@estado.Nome</option>
-                }
-            }
-        </select>
-    </div>
-    <input type="text" hidden="hidden" value="@ViewBag.Estado.Id" name="id" />
-    <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Alterar</button>
+<title>Alterando Cidade</title>
+<div class="container">
+    <h2 class="display-4 mb-3 mb-3">Alterarando cidade: @ViewBag.Cidade.Nome</h2>
+    <form action="/cidade/update" method="post">
+        <div>
+            <label for="campo-nome">Nome</label>
+            <input class="form-control" type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Cidade.Nome" maxlength="50" />
+        </div>
 
-</form>
+        <div class="row">
+            <div class="col-6">
+                <label for="campo-estado">Estado</label>
+                <select class="form-control" name="estado" id="campo-estado" required="">
+                    <option selected="selected" disabled="disabled">Selecione um Estado</option>
+                    @foreach (Model.Estado estado in ViewBag.Estados)
+                    {
+                        if (estado.Id == ViewBag.Cidade.Estado.Id)
+                        {
+                            <option value="@estado.Id" selected="selected">@estado.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@estado.Id">@estado.Nome</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="col-6">
+                <label for="campo-numerohabitantes">Número Habitantes</label>
+                <input class="form-control" type="number" required="" id="campo-numerohabitantes" name="numeroHabitantes" value="@ViewBag.Cidade.NumeroHabitantes" />
+            </div>
+        </div>
+        <input type="text" hidden="hidden" value="@ViewBag.Cidade.Id" name="id" />
+        <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Alterar</button>
+
+    </form>
+</div>

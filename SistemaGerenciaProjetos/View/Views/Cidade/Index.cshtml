@@ -15,6 +15,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
+                <th>Estado</th>
                 <th>Número de Habitantes</th>
                 <th>Ação</th>
             </tr>
@@ -25,6 +26,7 @@
                 <tr>
                     <td>@cidade.Id</td>
                     <td>@cidade.Nome</td>
+                    <td>@cidade.Estado.Sigla</td>
                     <td>@cidade.NumeroHabitantes</td>
                     <td>
                         <a class="btn btn-outline-info" href="/cidade/alterar?id=@cidade.Id"><i class="fa fa-edit"></i> Alterar</a>
@@ -37,6 +39,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
+                <td>Estado</td>
                 <th>Número de Habitantes</th>
                 <th>Ação</th>
             </tr>
