@@ -2,43 +2,45 @@
 @{
     ViewBag.Title = "Alterar";
 }
-
-<h2 class="display-4 mt-3 mb-3">Alterarando Projeto @ViewBag.Projetos.Nome</h2>
 <title>Alterando Projeto</title>
-<form action="/projeto/alterar" method="post">
-    <div>
-        <label for="campo-cliente">Clientes</label>
-        <select class="form-control" name="cliente" required="" id="campo-cliente">
-            <option disabled="disabled">Selecione um cliente</option>
-            @foreach (Model.Cliente Cliente in ViewBag.Clientes)
-            {
-                if (Cliente.Id == ViewBag.Projetos.FkCliente)
+<div class="container">
+    <h2 class="display-4 mt-3 mb-3">Alterarando Projeto @ViewBag.Projetos.Nome</h2>
+    <form action="/projeto/update" method="post">
+        <div>
+            <label for="campo-cliente">Clientes</label>
+            <select class="form-control" name="cliente" required="" id="campo-cliente">
+                <option disabled="disabled">Selecione um cliente</option>
+                @foreach (Model.Cliente Cliente in ViewBag.Clientes)
                 {
-                    <option value="@Cliente.Id" selected="selected">@Cliente.Nome</option>
+                    if (Cliente.Id == ViewBag.Projetos.FkCliente)
+                    {
+                        <option value="@Cliente.Id" selected="selected">@Cliente.Nome</option>
+                    }
+                    else
+                    {
+                        <option value="@Cliente.Id">@Cliente.Nome</option>
+                    }
                 }
-                else
-                {
-                    <option value="@Cliente.Id">@Cliente.Nome</option>
-                }
-            }
-        </select>
-    </div>
+            </select>
+        </div>
 
-    <div>
-        <label for="campo-nome"></label>
-        <input class="form-control" type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Projetos.Nome"/>
-    </div>
-    <div>
-        <label for="campo-data-criacao">Data Criação</label>
-        <input class="form-control" type="date" name="dataCriacao" id="campo-data-criacao" required="" value="@ViewBag.Projetos.DataCriacao"/>
-    </div>
-    <div>
-        <label for="campo-data-finalizacao">Data Finalização</label>
-        <input class="form-control" type="date" name="dataFinalizacao" id="campo-data-finalizacao" required="" value="@ViewBag.Projeto.DataFinalizacao" />
-    </div>
-    <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Alterar</button>
+        <div>
+            <label for="campo-nome">Nome do Projeto</label>
+            <input class="form-control" type="text" name="nome" id="campo-nome" required="" value="@ViewBag.Projetos.Nome" maxlength="50" />
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <label for="campo-data-criacao">Data Criação</label>
+                <input class="form-control" type="date" name="dataCriacao" id="campo-data-criacao" required="" value="@ViewBag.Projetos.DataCriacao" />
+            </div>
+            <div class="col-6">
+                <label for="campo-data-finalizacao">Data Finalização</label>
+                <input class="form-control" type="date" name="dataFinalizacao" id="campo-data-finalizacao" required="" value="@ViewBag.Projetos.DataFinalizacao" />
+            </div>
+            <input type="text" hidden="hidden" value="@ViewBag.Projetos.Id" name="id" />
+        </div>
+        <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i> Alterar</button>
 
-</form>
-
-
+    </form>
+</div>
 
