@@ -19,74 +19,122 @@ namespace View.Controllers
         }
         public ActionResult Index()
         {
-            List<Tarefa> lista = repository.ObterTodos();
-            ViewBag.Tarefa = lista;
-            return View();
+            if (LoginController.retorno == true)
+            {
+                List<Tarefa> lista = repository.ObterTodos();
+                ViewBag.Tarefa = lista;
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
         public ActionResult Cadastro()
         {
-            CategoriaRepository categoriaRepository = new CategoriaRepository();
-            ViewBag.Categorias = categoriaRepository.ObterTodos();
+            if (LoginController.retorno == true)
+            {
+                CategoriaRepository categoriaRepository = new CategoriaRepository();
+                ViewBag.Categorias = categoriaRepository.ObterTodos();
 
-            UsuarioRepository usuarioRepository = new UsuarioRepository();
-            ViewBag.Usuarios = usuarioRepository.ObterTodos();
+                UsuarioRepository usuarioRepository = new UsuarioRepository();
+                ViewBag.Usuarios = usuarioRepository.ObterTodos();
 
-            ProjetoRepository projetoRepository = new ProjetoRepository();
-            ViewBag.Projetos = projetoRepository.ObterTodos();
+                ProjetoRepository projetoRepository = new ProjetoRepository();
+                ViewBag.Projetos = projetoRepository.ObterTodos();
 
-            return View();
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Insert(int usuario, int projeto, int categoria, string titulo, string descricao, DateTime duracao)
         {
-            Tarefa tarefa = new Tarefa();
-            tarefa.Usuario = new Usuario();
-            tarefa.FkUsuario = usuario;
-            tarefa.FkProjeto = projeto;
-            tarefa.FkCategoria = categoria;
-            tarefa.Titulo = titulo;
-            tarefa.Descricao = descricao;
-            tarefa.Duracao = duracao;
-            repository.Inserir(tarefa);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+
+                Tarefa tarefa = new Tarefa();
+                tarefa.Usuario = new Usuario();
+                tarefa.FkUsuario = usuario;
+                tarefa.FkProjeto = projeto;
+                tarefa.FkCategoria = categoria;
+                tarefa.Titulo = titulo;
+                tarefa.Descricao = descricao;
+                tarefa.Duracao = duracao;
+                repository.Inserir(tarefa);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+
+                repository.Apagar(id);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Alterar(int id)
         {
-            ViewBag.Tarefas = repository.ObterPeloId(id);
+            if (LoginController.retorno == true)
+            {
+                ViewBag.Tarefas = repository.ObterPeloId(id);
 
-            CategoriaRepository categoriaRepository = new CategoriaRepository();
-            ViewBag.Categorias = categoriaRepository.ObterTodos();
+                CategoriaRepository categoriaRepository = new CategoriaRepository();
+                ViewBag.Categorias = categoriaRepository.ObterTodos();
 
-            UsuarioRepository usuarioRepository = new UsuarioRepository();
-            ViewBag.Usuarios = usuarioRepository.ObterTodos();
+                UsuarioRepository usuarioRepository = new UsuarioRepository();
+                ViewBag.Usuarios = usuarioRepository.ObterTodos();
 
-            ProjetoRepository projetoRepository = new ProjetoRepository();
-            ViewBag.Projetos = projetoRepository.ObterTodos();
+                ProjetoRepository projetoRepository = new ProjetoRepository();
+                ViewBag.Projetos = projetoRepository.ObterTodos();
 
-            return View();
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
 
         }
 
-        public ActionResult Update(int id,int usuario, int projeto, int categoria, string titulo, string descricao, DateTime duracao)
+        public ActionResult Update(int id, int usuario, int projeto, int categoria, string titulo, string descricao, DateTime duracao)
         {
-            Tarefa tarefa = new Tarefa();
-            tarefa.Id = id;
-            tarefa.Usuario = new Usuario();
-            tarefa.FkUsuario = usuario;
-            tarefa.FkProjeto = projeto;
-            tarefa.FkCategoria = categoria;
-            tarefa.Titulo = titulo;
-            tarefa.Descricao = descricao;
-            tarefa.Duracao = duracao;
-            repository.Alterar(tarefa);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                Tarefa tarefa = new Tarefa();
+                tarefa.Id = id;
+                tarefa.Usuario = new Usuario();
+                tarefa.FkUsuario = usuario;
+                tarefa.FkProjeto = projeto;
+                tarefa.FkCategoria = categoria;
+                tarefa.Titulo = titulo;
+                tarefa.Descricao = descricao;
+                tarefa.Duracao = duracao;
+                repository.Alterar(tarefa);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
     }
 }

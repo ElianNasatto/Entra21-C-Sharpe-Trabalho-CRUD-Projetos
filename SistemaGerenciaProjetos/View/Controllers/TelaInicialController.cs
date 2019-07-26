@@ -11,8 +11,15 @@ namespace View.Controllers
         // GET: TelaInicial
         public ActionResult Index()
         {
-            return View();
+            if (LoginController.retorno == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
-        
+
     }
 }

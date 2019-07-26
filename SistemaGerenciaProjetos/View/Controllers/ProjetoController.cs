@@ -19,42 +19,82 @@ namespace View.Controllers
         }
         public ActionResult Index()
         {
-            ViewBag.Projetos = repository.ObterTodos();
-            return View();
+            if (LoginController.retorno == true)
+            {
+                ViewBag.Projetos = repository.ObterTodos();
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Cadastro()
         {
-            ClienteRepository clienteRepository = new ClienteRepository();
-            ViewBag.Clientes = clienteRepository.ObterTodos();
-            return View();
+            if (LoginController.retorno == true)
+            {
+
+                ClienteRepository clienteRepository = new ClienteRepository();
+                ViewBag.Clientes = clienteRepository.ObterTodos();
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
-        
-        public ActionResult Insert(int cliente,string nome, DateTime dataCriacao, DateTime dataFinalizacao)
+
+        public ActionResult Insert(int cliente, string nome, DateTime dataCriacao, DateTime dataFinalizacao)
         {
-            Projeto projeto = new Projeto();
-            projeto.FkCliente = cliente;
-            projeto.Nome = nome;
-            projeto.DataCriacao = dataCriacao;
-            projeto.DataFinalizacao = dataFinalizacao;
-            repository.Inserir(projeto);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                Projeto projeto = new Projeto();
+                projeto.FkCliente = cliente;
+                projeto.Nome = nome;
+                projeto.DataCriacao = dataCriacao;
+                projeto.DataFinalizacao = dataFinalizacao;
+                repository.Inserir(projeto);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Alterar(int id)
         {
-            ClienteRepository clienteRepository = new ClienteRepository();
-            ViewBag.Clientes = clienteRepository.ObterTodos();
+            if (LoginController.retorno == true)
+            {
+                ClienteRepository clienteRepository = new ClienteRepository();
+                ViewBag.Clientes = clienteRepository.ObterTodos();
 
-            ViewBag.Projetos = repository.ObterPeloId(id);
+                ViewBag.Projetos = repository.ObterPeloId(id);
 
-            return View();
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                repository.Apagar(id);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+
         }
 
     }

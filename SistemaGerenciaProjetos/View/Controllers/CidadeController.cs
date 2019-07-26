@@ -10,68 +10,114 @@ namespace View.Controllers
 {
     public class CidadeController : Controller
     {
+
         private CidadeRepository repository;
 
         public CidadeController()
         {
-
             repository = new CidadeRepository();
         }
 
         // GET: Estado
         public ActionResult Index()
         {
-            List<Cidade> cidades = repository.ObterTodos();
-            ViewBag.Cidades = cidades;
-            return View();
+            if (LoginController.retorno == true)
+            {
+                List<Cidade> cidades = repository.ObterTodos();
+                ViewBag.Cidades = cidades;
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Cadastro()
         {
-            EstadoRepository estadoRepository = new EstadoRepository();
-            List<Estado> estados = estadoRepository.ObterTodos();
-            ViewBag.Estados = estados;
+            if (LoginController.retorno == true)
+            {
+                EstadoRepository estadoRepository = new EstadoRepository();
+                List<Estado> estados = estadoRepository.ObterTodos();
+                ViewBag.Estados = estados;
 
-            return View();
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+
         }
 
         public ActionResult Store(string nome, int numeroHabitantes, int estado)
         {
-            Cidade cidade = new Cidade();
-            cidade.Nome = nome;
-            cidade.NumeroHabitantes = numeroHabitantes;
-            cidade.Estado = new Estado();
-            cidade.IdEstado = estado;
-            repository.Inserir(cidade);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                Cidade cidade = new Cidade();
+                cidade.Nome = nome;
+                cidade.NumeroHabitantes = numeroHabitantes;
+                cidade.Estado = new Estado();
+                cidade.IdEstado = estado;
+                repository.Inserir(cidade);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Alterar(int id)
         {
-            Cidade cidade = new Cidade();
-            cidade = repository.ObterPeloId(id);
-            ViewBag.Cidade = cidade;
-            EstadoRepository estadoRepository = new EstadoRepository();
-            ViewBag.Estados = estadoRepository.ObterTodos();
-            return View();
+            if (LoginController.retorno == true)
+            {
+                Cidade cidade = new Cidade();
+                cidade = repository.ObterPeloId(id);
+                ViewBag.Cidade = cidade;
+                EstadoRepository estadoRepository = new EstadoRepository();
+                ViewBag.Estados = estadoRepository.ObterTodos();
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Update(int id, int estado, string nome, int numeroHabitates)
         {
-            Cidade cidade = new Cidade();
-            cidade.Id = id;
-            cidade.IdEstado = estado;
-            cidade.Nome = nome;
-            cidade.NumeroHabitantes = numeroHabitates;
+            if (LoginController.retorno == true)
+            {
+                Cidade cidade = new Cidade();
+                cidade.Id = id;
+                cidade.IdEstado = estado;
+                cidade.Nome = nome;
+                cidade.NumeroHabitantes = numeroHabitates;
 
-            repository.Atualizar(cidade);
-            return RedirectToAction("Index");
+                repository.Atualizar(cidade);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                repository.Apagar(id);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
     }
 }

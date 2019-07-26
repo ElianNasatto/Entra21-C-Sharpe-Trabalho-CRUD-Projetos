@@ -1,4 +1,5 @@
-﻿using Repository;
+﻿using Model;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,15 @@ namespace View.Controllers
         }
         public ActionResult Index()
         {
+            retorno = false;
             return View();
         }
-        public ActionResult Verifica(string login,string senha)
+
+        public static bool retorno;
+        public ActionResult Verifica(string login, string senha)
         {
-            bool retorno = repository.VerificaLogin(login, senha);
+            retorno = repository.VerificaLogin(login, senha);
+
             if (retorno == true)
             {
                 return Redirect("/telainicial/index");
@@ -29,7 +34,10 @@ namespace View.Controllers
             else
             {
                 return RedirectToAction("Index");
+
             }
+
+
         }
     }
 }

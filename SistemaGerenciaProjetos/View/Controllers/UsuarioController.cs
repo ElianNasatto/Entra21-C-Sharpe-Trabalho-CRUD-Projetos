@@ -18,47 +18,95 @@ namespace View.Controllers
         }
         public ActionResult Index()
         {
-            List<Usuario> lista = repository.ObterTodos();
-            ViewBag.Usuarios = lista;
-            return View();
+            if (LoginController.retorno == true)
+            {
+                List<Usuario> lista = repository.ObterTodos();
+                ViewBag.Usuarios = lista;
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Cadastro()
         {
-            return View();
+            if (LoginController.retorno == true)
+            {
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Alterar(int id)
         {
-            Usuario usuario = new Usuario();
-            usuario = repository.ObterPeloId(id);
-            ViewBag.Usuario = usuario;
-            return View();
+            if (LoginController.retorno == true)
+            {
+                Usuario usuario = new Usuario();
+                usuario = repository.ObterPeloId(id);
+                ViewBag.Usuario = usuario;
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Insert(string nome, string login, string senha)
         {
-            Usuario usuario = new Usuario();
-            usuario.Nome = nome;
-            usuario.Login = login;
-            usuario.Senha = senha;
-            repository.Inserir(usuario);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                Usuario usuario = new Usuario();
+                usuario.Nome = nome;
+                usuario.Login = login;
+                usuario.Senha = senha;
+                repository.Inserir(usuario);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
         public ActionResult Update(string nome, string login, string senha, int id)
         {
-            Usuario usuario = new Usuario();
-            usuario.Id = id;
-            usuario.Nome = nome;
-            usuario.Login = login;
-            usuario.Senha = senha;
-            repository.Alterar(usuario);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                Usuario usuario = new Usuario();
+                usuario.Id = id;
+                usuario.Nome = nome;
+                usuario.Login = login;
+                usuario.Senha = senha;
+                repository.Alterar(usuario);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+
+                repository.Apagar(id);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
     }
 }

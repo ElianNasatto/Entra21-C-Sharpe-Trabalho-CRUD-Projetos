@@ -20,51 +20,96 @@ namespace View.Controllers
         // GET: Estado
         public ActionResult Index()
         {
-            List<Estado> estados = repository.ObterTodos();
-            ViewBag.Estados = estados;
-            return View();
+            if (LoginController.retorno == true)
+            {
+                List<Estado> estados = repository.ObterTodos();
+                ViewBag.Estados = estados;
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Cadastro()
         {
-            return View();
+            if (LoginController.retorno == true)
+            {
+
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Store(string nome, string sigla)
         {
-            Estado estado = new Estado();
-            estado.Nome = nome;
-            estado.Sigla = sigla;
-            repository.Inserir(estado);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                Estado estado = new Estado();
+                estado.Nome = nome;
+                estado.Sigla = sigla;
+                repository.Inserir(estado);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Alterar(int id)
         {
-            Estado estado = repository.ObterPeloId(id);
-            ViewBag.Estado = estado;
-            return View();
+            if (LoginController.retorno == true)
+            {
+                Estado estado = repository.ObterPeloId(id);
+                ViewBag.Estado = estado;
+                return View();
 
-            /* ViewBag.Estado = repository.ObterPeloId(id);
-            EstadoRepository estadoRepository = new EstadoRepository();
-            ViewBag.Estados = estadoRepository.ObterTodos();
-            return View(); */
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+
+
         }
 
         public ActionResult Update(int id, string nome, string sigla)
         {
-            Estado estado = new Estado();
-            estado.Id = id;
-            estado.Nome = nome;
-            estado.Sigla = sigla;
-            repository.Alterar(estado);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                Estado estado = new Estado();
+                estado.Id = id;
+                estado.Nome = nome;
+                estado.Sigla = sigla;
+                repository.Alterar(estado);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return RedirectToAction("Index");
+            if (LoginController.retorno == true)
+            {
+                repository.Apagar(id);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
     }
 }
