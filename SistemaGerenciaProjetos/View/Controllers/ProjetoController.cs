@@ -2,6 +2,7 @@
 using Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -70,7 +71,8 @@ namespace View.Controllers
             if (LoginController.retorno == true)
             {
                 ClienteRepository clienteRepository = new ClienteRepository();
-                ViewBag.Clientes = clienteRepository.ObterTodos();
+                List<Cliente> lista = clienteRepository.ObterTodos();
+                ViewBag.Clientes = lista;
 
                 ViewBag.Projetos = repository.ObterPeloId(id);
 
@@ -83,6 +85,17 @@ namespace View.Controllers
             }
         }
 
+        public ActionResult Update(int id,int cliente, string nome, DateTime dataCriacao, DateTime dataFinalizacao)
+        {
+            Projeto projeto = new Projeto();
+            projeto.Id = id;
+            projeto.Nome = nome;
+            projeto.FkCliente = cliente;
+            projeto.DataCriacao = dataCriacao;
+            projeto.DataFinalizacao = dataFinalizacao;
+            repository.Alterar(projeto);
+            return Redirect("/projeto");
+        }
         public ActionResult Apagar(int id)
         {
             if (LoginController.retorno == true)

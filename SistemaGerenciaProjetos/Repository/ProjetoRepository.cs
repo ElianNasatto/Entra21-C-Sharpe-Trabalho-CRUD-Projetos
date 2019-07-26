@@ -72,11 +72,11 @@ OUTPUT INSERTED.ID VALUES
         {
             SqlCommand comando = Conexao.Conectar();
             comando.CommandText = @"UPDATE projetos SET 
-nome = @NOME, 
-id_cliente = @ID_CLIENTE, 
-data_criacao = @DATA_CRIACAO,
-data_finalizacao = @DATA_FINALIZACAO
-WHERE id = @Id";
+                                    nome = @NOME, 
+                                    id_cliente = @ID_CLIENTE, 
+                                    data_criacao = @DATA_CRIACAO,
+                                    data_finalizacao = @DATA_FINALIZACAO
+                                    WHERE id = @ID";
             comando.Parameters.AddWithValue("@NOME", projeto.Nome);
             comando.Parameters.AddWithValue("@ID_CLIENTE", projeto.FkCliente);
             comando.Parameters.AddWithValue("@DATA_CRIACAO", projeto.DataCriacao);
@@ -97,7 +97,7 @@ WHERE id = @Id";
                                         projetos.data_finalizacao AS 'ProjetoDataFinalizacao',
                                         clientes.nome AS 'ClienteNome'
                                     FROM projetos
-                                    INNER JOIN clientes ON (projetos.id_cliente = clientes.id)";
+                                    INNER JOIN clientes ON (projetos.id_cliente = clientes.id) WHERE projetos.id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
             DataTable tabela = new DataTable();
