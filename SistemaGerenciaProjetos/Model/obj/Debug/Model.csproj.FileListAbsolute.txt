@@ -16,3 +16,9 @@ C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projeto
 C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.dll
 C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.pdb
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\bin\Debug\Model.dll
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\bin\Debug\Model.pdb
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.csprojAssemblyReference.cache
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.dll
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Model\obj\Debug\Model.pdb

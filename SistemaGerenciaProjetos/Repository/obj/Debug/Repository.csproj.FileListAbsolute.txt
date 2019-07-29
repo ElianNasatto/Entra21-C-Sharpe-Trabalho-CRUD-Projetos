@@ -25,3 +25,12 @@ C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projeto
 C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csproj.CopyComplete
 C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.dll
 C:\Users\Weber\OneDrive\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.pdb
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Repository.dll
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Repository.pdb
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Model.dll
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\bin\Debug\Model.pdb
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.csproj.CopyComplete
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.dll
+T:\Documentos\GitHub\Entra21-C-Sharpe-Trabalho-CRUD-Projetos\SistemaGerenciaProjetos\Repository\obj\Debug\Repository.pdb
